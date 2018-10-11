@@ -51,12 +51,13 @@ void QPano3::showInputImage(QLabel & qlabel, QString ImgPath)
 {
 	QImage* img = new QImage;
 	img->load(ImgPath);
-	qlabel.setPixmap(QPixmap::fromImage(*img));
+	//qlabel.setPixmap(QPixmap::fromImage(*img));
+	qlabel.setPixmap(QPixmap::fromImage(*img).scaled(qlabel.width(), qlabel.height() ));
 }
 
 void QPano3::showInputImage(QLabel & qlabel, QImage ImgData)
-{
-	qlabel.setPixmap(QPixmap::fromImage(ImgData));
+{	
+	qlabel.setPixmap(QPixmap::fromImage(ImgData).scaled(qlabel.width(), qlabel.height() ));
 }	
 void QPano3::processImagePath(InputImage index){
 	

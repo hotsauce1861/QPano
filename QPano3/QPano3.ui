@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>949</width>
-    <height>665</height>
+    <width>900</width>
+    <height>619</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,6 +17,12 @@
    <bool>true</bool>
   </property>
   <widget class="QWidget" name="centralWidget">
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+     <horstretch>2</horstretch>
+     <verstretch>2</verstretch>
+    </sizepolicy>
+   </property>
    <layout class="QGridLayout" name="gridLayout">
     <item row="1" column="3">
      <widget class="QPushButton" name="pushButtonProcess01">
@@ -44,6 +50,18 @@
     </item>
     <item row="2" column="1">
      <widget class="QLabel" name="labelImg02">
+      <property name="minimumSize">
+       <size>
+        <width>240</width>
+        <height>240</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>480</width>
+        <height>480</height>
+       </size>
+      </property>
       <property name="text">
        <string/>
       </property>
@@ -51,8 +69,26 @@
     </item>
     <item row="0" column="1">
      <widget class="QLabel" name="labelImg01">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>240</width>
+        <height>240</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>480</width>
+        <height>480</height>
+       </size>
+      </property>
       <property name="text">
        <string/>
+      </property>
+      <property name="scaledContents">
+       <bool>false</bool>
       </property>
      </widget>
     </item>
@@ -68,6 +104,18 @@
       <property name="enabled">
        <bool>true</bool>
       </property>
+      <property name="minimumSize">
+       <size>
+        <width>480</width>
+        <height>240</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>960</width>
+        <height>480</height>
+       </size>
+      </property>
       <property name="text">
        <string/>
       </property>
@@ -75,6 +123,24 @@
     </item>
     <item row="2" column="2" colspan="6">
      <widget class="QLabel" name="labelExImg02">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>1</horstretch>
+        <verstretch>1</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>480</width>
+        <height>240</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>960</width>
+        <height>480</height>
+       </size>
+      </property>
       <property name="text">
        <string/>
       </property>
@@ -85,6 +151,12 @@
     </item>
     <item row="0" column="8" rowspan="3">
      <widget class="QLabel" name="labelStitchImg">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>2</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
       <property name="text">
        <string/>
       </property>
@@ -104,7 +176,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>949</width>
+     <width>900</width>
      <height>23</height>
     </rect>
    </property>

@@ -46,7 +46,7 @@ FishEye& FishEye::ImgExpand2()
 	printf("Current x is (%d ,%d)\n", mImg.cols, mImg.rows);
 
 	Point2i circleCoord;
-
+	//TODO 设置鱼眼图中心 可以单独封装接口
 	circleCoord.x = mImg.cols / 2 + 2;
 	circleCoord.y = mImg.rows / 2 + 5;
 
@@ -63,7 +63,7 @@ FishEye& FishEye::ImgExpand2()
 			printf("Current %d %d is (%d, %d) ", i, j, cols, rows);
 			if (rows < mImg.rows && cols < mImg.cols
 				&& rows >= 0 && cols >= 0) {
-				//mDesImg.ptr<Vec3b>(rows)[cols] = mImg.ptr<Vec3b>(j)[i];
+					
 				Vec3b color_value = mImg.at<Vec3b>(rows, cols);
 				mDesImg.at<Vec3b>(j, i) = color_value;
 				std::cout << color_value << std::endl;

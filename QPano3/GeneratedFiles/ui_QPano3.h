@@ -51,10 +51,15 @@ public:
     {
         if (QPano3Class->objectName().isEmpty())
             QPano3Class->setObjectName(QStringLiteral("QPano3Class"));
-        QPano3Class->resize(949, 665);
+        QPano3Class->resize(900, 619);
         QPano3Class->setAnimated(true);
         centralWidget = new QWidget(QPano3Class);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
+        QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
+        sizePolicy.setHorizontalStretch(2);
+        sizePolicy.setVerticalStretch(2);
+        sizePolicy.setHeightForWidth(centralWidget->sizePolicy().hasHeightForWidth());
+        centralWidget->setSizePolicy(sizePolicy);
         gridLayout = new QGridLayout(centralWidget);
         gridLayout->setSpacing(6);
         gridLayout->setContentsMargins(11, 11, 11, 11);
@@ -81,11 +86,17 @@ public:
 
         labelImg02 = new QLabel(centralWidget);
         labelImg02->setObjectName(QStringLiteral("labelImg02"));
+        labelImg02->setMinimumSize(QSize(240, 240));
+        labelImg02->setMaximumSize(QSize(480, 480));
 
         gridLayout->addWidget(labelImg02, 2, 1, 1, 1);
 
         labelImg01 = new QLabel(centralWidget);
         labelImg01->setObjectName(QStringLiteral("labelImg01"));
+        labelImg01->setEnabled(true);
+        labelImg01->setMinimumSize(QSize(240, 240));
+        labelImg01->setMaximumSize(QSize(480, 480));
+        labelImg01->setScaledContents(false);
 
         gridLayout->addWidget(labelImg01, 0, 1, 1, 1);
 
@@ -97,11 +108,20 @@ public:
         labelExImg01 = new QLabel(centralWidget);
         labelExImg01->setObjectName(QStringLiteral("labelExImg01"));
         labelExImg01->setEnabled(true);
+        labelExImg01->setMinimumSize(QSize(480, 240));
+        labelExImg01->setMaximumSize(QSize(960, 480));
 
         gridLayout->addWidget(labelExImg01, 0, 2, 1, 6);
 
         labelExImg02 = new QLabel(centralWidget);
         labelExImg02->setObjectName(QStringLiteral("labelExImg02"));
+        QSizePolicy sizePolicy1(QSizePolicy::Preferred, QSizePolicy::Preferred);
+        sizePolicy1.setHorizontalStretch(1);
+        sizePolicy1.setVerticalStretch(1);
+        sizePolicy1.setHeightForWidth(labelExImg02->sizePolicy().hasHeightForWidth());
+        labelExImg02->setSizePolicy(sizePolicy1);
+        labelExImg02->setMinimumSize(QSize(480, 240));
+        labelExImg02->setMaximumSize(QSize(960, 480));
 
         gridLayout->addWidget(labelExImg02, 2, 2, 1, 6);
 
@@ -112,6 +132,11 @@ public:
 
         labelStitchImg = new QLabel(centralWidget);
         labelStitchImg->setObjectName(QStringLiteral("labelStitchImg"));
+        QSizePolicy sizePolicy2(QSizePolicy::Preferred, QSizePolicy::Preferred);
+        sizePolicy2.setHorizontalStretch(2);
+        sizePolicy2.setVerticalStretch(0);
+        sizePolicy2.setHeightForWidth(labelStitchImg->sizePolicy().hasHeightForWidth());
+        labelStitchImg->setSizePolicy(sizePolicy2);
 
         gridLayout->addWidget(labelStitchImg, 0, 8, 3, 1);
 
@@ -123,7 +148,7 @@ public:
         QPano3Class->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(QPano3Class);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 949, 23));
+        menuBar->setGeometry(QRect(0, 0, 900, 23));
         menu_F = new QMenu(menuBar);
         menu_F->setObjectName(QStringLiteral("menu_F"));
         QPano3Class->setMenuBar(menuBar);
