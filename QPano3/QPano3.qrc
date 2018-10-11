@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/QPano3">
+        <file>fontawesome-free-5.3.1-desktop/svgs/solid/ad.svg</file>
+    </qresource>
+</RCC>

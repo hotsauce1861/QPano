@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>QPano3Class</class>
+ <widget class="QMainWindow" name="QPano3Class">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1024</width>
+    <height>768</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>QPano3</string>
+  </property>
+  <property name="animated">
+   <bool>true</bool>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="1" column="2">
+     <widget class="QPushButton" name="pushButtonProcess01">
+      <property name="text">
+       <string>处理</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0">
+     <widget class="QLabel" name="labelImg02">
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QLineEdit" name="lineEditImagePath01"/>
+    </item>
+    <item row="1" column="1">
+     <widget class="QPushButton" name="pushButtonOpenImg01">
+      <property name="text">
+       <string>浏览...</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="1">
+     <widget class="QPushButton" name="pushButtonOpenImg02">
+      <property name="text">
+       <string>浏览...</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="0">
+     <widget class="QLineEdit" name="lineEditImagePath02"/>
+    </item>
+    <item row="3" column="2">
+     <widget class="QPushButton" name="pushButtonProcess02">
+      <property name="text">
+       <string>处理</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0">
+     <widget class="QLabel" name="labelImg01">
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1" colspan="6">
+     <widget class="QLabel" name="labelExImg01">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="1" colspan="6">
+     <widget class="QLabel" name="labelExImg02">
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1024</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu_F">
+    <property name="title">
+     <string>文件(F)</string>
+    </property>
+   </widget>
+   <addaction name="menu_F"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <tabstops>
+  <tabstop>lineEditImagePath01</tabstop>
+  <tabstop>pushButtonOpenImg01</tabstop>
+  <tabstop>pushButtonProcess01</tabstop>
+ </tabstops>
+ <resources>
+  <include location="QPano3.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>pushButtonOpenImg01</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>QPano3Class</receiver>
+   <slot>setImagePath01()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>168</x>
+     <y>274</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>197</x>
+     <y>287</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButtonOpenImg02</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>QPano3Class</receiver>
+   <slot>setImagePath02()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>471</x>
+     <y>273</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>498</x>
+     <y>282</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButtonProcess01</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>QPano3Class</receiver>
+   <slot>processImage01()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>265</x>
+     <y>266</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>279</x>
+     <y>260</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButtonProcess02</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>QPano3Class</receiver>
+   <slot>processImage02()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>529</x>
+     <y>265</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>500</x>
+     <y>259</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>setImagePath01()</slot>
+  <slot>setImagePath02()</slot>
+  <slot>processImage01()</slot>
+  <slot>processImage02()</slot>
+ </slots>
+</ui>
