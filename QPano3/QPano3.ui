@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1024</width>
-    <height>768</height>
+    <width>949</width>
+    <height>665</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,55 +18,52 @@
   </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QGridLayout" name="gridLayout">
-    <item row="1" column="2">
+    <item row="1" column="3">
      <widget class="QPushButton" name="pushButtonProcess01">
       <property name="text">
        <string>处理</string>
       </property>
      </widget>
     </item>
-    <item row="2" column="0">
-     <widget class="QLabel" name="labelImg02">
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="0">
+    <item row="1" column="1">
      <widget class="QLineEdit" name="lineEditImagePath01"/>
     </item>
-    <item row="1" column="1">
+    <item row="1" column="2">
      <widget class="QPushButton" name="pushButtonOpenImg01">
       <property name="text">
        <string>浏览...</string>
       </property>
      </widget>
     </item>
-    <item row="3" column="1">
+    <item row="3" column="2">
      <widget class="QPushButton" name="pushButtonOpenImg02">
       <property name="text">
        <string>浏览...</string>
       </property>
      </widget>
     </item>
-    <item row="3" column="0">
-     <widget class="QLineEdit" name="lineEditImagePath02"/>
-    </item>
-    <item row="3" column="2">
-     <widget class="QPushButton" name="pushButtonProcess02">
+    <item row="2" column="1">
+     <widget class="QLabel" name="labelImg02">
       <property name="text">
-       <string>处理</string>
+       <string/>
       </property>
      </widget>
     </item>
-    <item row="0" column="0">
+    <item row="0" column="1">
      <widget class="QLabel" name="labelImg01">
       <property name="text">
        <string/>
       </property>
      </widget>
     </item>
-    <item row="0" column="1" colspan="6">
+    <item row="3" column="3">
+     <widget class="QPushButton" name="pushButtonProcess02">
+      <property name="text">
+       <string>处理</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="2" colspan="6">
      <widget class="QLabel" name="labelExImg01">
       <property name="enabled">
        <bool>true</bool>
@@ -76,10 +73,27 @@
       </property>
      </widget>
     </item>
-    <item row="2" column="1" colspan="6">
+    <item row="2" column="2" colspan="6">
      <widget class="QLabel" name="labelExImg02">
       <property name="text">
        <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="1">
+     <widget class="QLineEdit" name="lineEditImagePath02"/>
+    </item>
+    <item row="0" column="8" rowspan="3">
+     <widget class="QLabel" name="labelStitchImg">
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="8">
+     <widget class="QPushButton" name="pushButtonStitch">
+      <property name="text">
+       <string>拼接</string>
       </property>
      </widget>
     </item>
@@ -90,7 +104,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1024</width>
+     <width>949</width>
      <height>23</height>
     </rect>
    </property>
@@ -128,8 +142,8 @@
    <slot>setImagePath01()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>168</x>
-     <y>274</y>
+     <x>753</x>
+     <y>335</y>
     </hint>
     <hint type="destinationlabel">
      <x>197</x>
@@ -144,8 +158,8 @@
    <slot>setImagePath02()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>471</x>
-     <y>273</y>
+     <x>753</x>
+     <y>633</y>
     </hint>
     <hint type="destinationlabel">
      <x>498</x>
@@ -160,8 +174,8 @@
    <slot>processImage01()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>265</x>
-     <y>266</y>
+     <x>834</x>
+     <y>335</y>
     </hint>
     <hint type="destinationlabel">
      <x>279</x>
@@ -176,12 +190,28 @@
    <slot>processImage02()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>529</x>
-     <y>265</y>
+     <x>834</x>
+     <y>633</y>
     </hint>
     <hint type="destinationlabel">
      <x>500</x>
      <y>259</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButtonStitch</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>QPano3Class</receiver>
+   <slot>stitchImg()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>901</x>
+     <y>620</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>918</x>
+     <y>637</y>
     </hint>
    </hints>
   </connection>
@@ -191,5 +221,6 @@
   <slot>setImagePath02()</slot>
   <slot>processImage01()</slot>
   <slot>processImage02()</slot>
+  <slot>stitchImg()</slot>
  </slots>
 </ui>

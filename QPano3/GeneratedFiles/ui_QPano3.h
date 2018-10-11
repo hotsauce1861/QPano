@@ -10,11 +10,13 @@
 #define UI_QPANO3_H
 
 #include <QtCore/QVariant>
+#include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
+#include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
@@ -29,16 +31,19 @@ public:
     QWidget *centralWidget;
     QGridLayout *gridLayout;
     QPushButton *pushButtonProcess01;
-    QLabel *labelImg02;
     QLineEdit *lineEditImagePath01;
     QPushButton *pushButtonOpenImg01;
     QPushButton *pushButtonOpenImg02;
-    QLineEdit *lineEditImagePath02;
-    QPushButton *pushButtonProcess02;
+    QLabel *labelImg02;
     QLabel *labelImg01;
+    QPushButton *pushButtonProcess02;
     QLabel *labelExImg01;
     QLabel *labelExImg02;
+    QLineEdit *lineEditImagePath02;
+    QLabel *labelStitchImg;
+    QPushButton *pushButtonStitch;
     QMenuBar *menuBar;
+    QMenu *menu_F;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
 
@@ -46,7 +51,7 @@ public:
     {
         if (QPano3Class->objectName().isEmpty())
             QPano3Class->setObjectName(QStringLiteral("QPano3Class"));
-        QPano3Class->resize(1024, 768);
+        QPano3Class->resize(949, 665);
         QPano3Class->setAnimated(true);
         centralWidget = new QWidget(QPano3Class);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
@@ -57,58 +62,70 @@ public:
         pushButtonProcess01 = new QPushButton(centralWidget);
         pushButtonProcess01->setObjectName(QStringLiteral("pushButtonProcess01"));
 
-        gridLayout->addWidget(pushButtonProcess01, 1, 2, 1, 1);
-
-        labelImg02 = new QLabel(centralWidget);
-        labelImg02->setObjectName(QStringLiteral("labelImg02"));
-
-        gridLayout->addWidget(labelImg02, 2, 0, 1, 1);
+        gridLayout->addWidget(pushButtonProcess01, 1, 3, 1, 1);
 
         lineEditImagePath01 = new QLineEdit(centralWidget);
         lineEditImagePath01->setObjectName(QStringLiteral("lineEditImagePath01"));
 
-        gridLayout->addWidget(lineEditImagePath01, 1, 0, 1, 1);
+        gridLayout->addWidget(lineEditImagePath01, 1, 1, 1, 1);
 
         pushButtonOpenImg01 = new QPushButton(centralWidget);
         pushButtonOpenImg01->setObjectName(QStringLiteral("pushButtonOpenImg01"));
 
-        gridLayout->addWidget(pushButtonOpenImg01, 1, 1, 1, 1);
+        gridLayout->addWidget(pushButtonOpenImg01, 1, 2, 1, 1);
 
         pushButtonOpenImg02 = new QPushButton(centralWidget);
         pushButtonOpenImg02->setObjectName(QStringLiteral("pushButtonOpenImg02"));
 
-        gridLayout->addWidget(pushButtonOpenImg02, 3, 1, 1, 1);
+        gridLayout->addWidget(pushButtonOpenImg02, 3, 2, 1, 1);
 
-        lineEditImagePath02 = new QLineEdit(centralWidget);
-        lineEditImagePath02->setObjectName(QStringLiteral("lineEditImagePath02"));
+        labelImg02 = new QLabel(centralWidget);
+        labelImg02->setObjectName(QStringLiteral("labelImg02"));
 
-        gridLayout->addWidget(lineEditImagePath02, 3, 0, 1, 1);
-
-        pushButtonProcess02 = new QPushButton(centralWidget);
-        pushButtonProcess02->setObjectName(QStringLiteral("pushButtonProcess02"));
-
-        gridLayout->addWidget(pushButtonProcess02, 3, 2, 1, 1);
+        gridLayout->addWidget(labelImg02, 2, 1, 1, 1);
 
         labelImg01 = new QLabel(centralWidget);
         labelImg01->setObjectName(QStringLiteral("labelImg01"));
 
-        gridLayout->addWidget(labelImg01, 0, 0, 1, 1);
+        gridLayout->addWidget(labelImg01, 0, 1, 1, 1);
+
+        pushButtonProcess02 = new QPushButton(centralWidget);
+        pushButtonProcess02->setObjectName(QStringLiteral("pushButtonProcess02"));
+
+        gridLayout->addWidget(pushButtonProcess02, 3, 3, 1, 1);
 
         labelExImg01 = new QLabel(centralWidget);
         labelExImg01->setObjectName(QStringLiteral("labelExImg01"));
         labelExImg01->setEnabled(true);
 
-        gridLayout->addWidget(labelExImg01, 0, 1, 1, 6);
+        gridLayout->addWidget(labelExImg01, 0, 2, 1, 6);
 
         labelExImg02 = new QLabel(centralWidget);
         labelExImg02->setObjectName(QStringLiteral("labelExImg02"));
 
-        gridLayout->addWidget(labelExImg02, 2, 1, 1, 6);
+        gridLayout->addWidget(labelExImg02, 2, 2, 1, 6);
+
+        lineEditImagePath02 = new QLineEdit(centralWidget);
+        lineEditImagePath02->setObjectName(QStringLiteral("lineEditImagePath02"));
+
+        gridLayout->addWidget(lineEditImagePath02, 3, 1, 1, 1);
+
+        labelStitchImg = new QLabel(centralWidget);
+        labelStitchImg->setObjectName(QStringLiteral("labelStitchImg"));
+
+        gridLayout->addWidget(labelStitchImg, 0, 8, 3, 1);
+
+        pushButtonStitch = new QPushButton(centralWidget);
+        pushButtonStitch->setObjectName(QStringLiteral("pushButtonStitch"));
+
+        gridLayout->addWidget(pushButtonStitch, 3, 8, 1, 1);
 
         QPano3Class->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(QPano3Class);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 1024, 23));
+        menuBar->setGeometry(QRect(0, 0, 949, 23));
+        menu_F = new QMenu(menuBar);
+        menu_F->setObjectName(QStringLiteral("menu_F"));
         QPano3Class->setMenuBar(menuBar);
         mainToolBar = new QToolBar(QPano3Class);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
@@ -119,11 +136,14 @@ public:
         QWidget::setTabOrder(lineEditImagePath01, pushButtonOpenImg01);
         QWidget::setTabOrder(pushButtonOpenImg01, pushButtonProcess01);
 
+        menuBar->addAction(menu_F->menuAction());
+
         retranslateUi(QPano3Class);
         QObject::connect(pushButtonOpenImg01, SIGNAL(clicked(bool)), QPano3Class, SLOT(setImagePath01()));
         QObject::connect(pushButtonOpenImg02, SIGNAL(clicked(bool)), QPano3Class, SLOT(setImagePath02()));
         QObject::connect(pushButtonProcess01, SIGNAL(clicked(bool)), QPano3Class, SLOT(processImage01()));
         QObject::connect(pushButtonProcess02, SIGNAL(clicked(bool)), QPano3Class, SLOT(processImage02()));
+        QObject::connect(pushButtonStitch, SIGNAL(clicked(bool)), QPano3Class, SLOT(stitchImg()));
 
         QMetaObject::connectSlotsByName(QPano3Class);
     } // setupUi
@@ -132,13 +152,16 @@ public:
     {
         QPano3Class->setWindowTitle(QApplication::translate("QPano3Class", "QPano3", nullptr));
         pushButtonProcess01->setText(QApplication::translate("QPano3Class", "\345\244\204\347\220\206", nullptr));
-        labelImg02->setText(QString());
         pushButtonOpenImg01->setText(QApplication::translate("QPano3Class", "\346\265\217\350\247\210...", nullptr));
         pushButtonOpenImg02->setText(QApplication::translate("QPano3Class", "\346\265\217\350\247\210...", nullptr));
-        pushButtonProcess02->setText(QApplication::translate("QPano3Class", "\345\244\204\347\220\206", nullptr));
+        labelImg02->setText(QString());
         labelImg01->setText(QString());
+        pushButtonProcess02->setText(QApplication::translate("QPano3Class", "\345\244\204\347\220\206", nullptr));
         labelExImg01->setText(QString());
         labelExImg02->setText(QString());
+        labelStitchImg->setText(QString());
+        pushButtonStitch->setText(QApplication::translate("QPano3Class", "\346\213\274\346\216\245", nullptr));
+        menu_F->setTitle(QApplication::translate("QPano3Class", "\346\226\207\344\273\266(F)", nullptr));
     } // retranslateUi
 
 };

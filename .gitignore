@@ -259,3 +259,8 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+/QPano3/Resources/fontawesome-free-5.3.1-desktop
+/QPano3/src1.jpg
+/QPano3/src2.jpg
+/QPano3/srcm1.jpg
+/QPano3/srcm2.jpg

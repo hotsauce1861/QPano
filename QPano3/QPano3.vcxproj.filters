@@ -39,6 +39,9 @@
     <ClCompile Include="fisheye.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="fishstitch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="QPano3.h">
@@ -57,6 +60,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="fisheye.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="fishstitch.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
