@@ -22,7 +22,7 @@
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QWidget>
-#include "GwLabel.h"
+#include <gwlabel.h>
 
 QT_BEGIN_NAMESPACE
 
@@ -35,7 +35,7 @@ public:
     QLineEdit *lineEditImagePath01;
     QPushButton *pushButtonOpenImg01;
     QPushButton *pushButtonOpenImg02;
-	GwLabel *labelImg02;
+    GwLabel *labelImg02;
     GwLabel *labelImg01;
     QPushButton *pushButtonProcess02;
     QLabel *labelExImg01;
@@ -89,6 +89,8 @@ public:
         labelImg02->setObjectName(QStringLiteral("labelImg02"));
         labelImg02->setMinimumSize(QSize(240, 240));
         labelImg02->setMaximumSize(QSize(480, 480));
+        labelImg02->setFrameShape(QFrame::StyledPanel);
+        labelImg02->setFrameShadow(QFrame::Sunken);
 
         gridLayout->addWidget(labelImg02, 2, 1, 1, 1);
 
@@ -97,6 +99,8 @@ public:
         labelImg01->setEnabled(true);
         labelImg01->setMinimumSize(QSize(240, 240));
         labelImg01->setMaximumSize(QSize(480, 480));
+        labelImg01->setFrameShape(QFrame::StyledPanel);
+        labelImg01->setFrameShadow(QFrame::Sunken);
         labelImg01->setScaledContents(false);
 
         gridLayout->addWidget(labelImg01, 0, 1, 1, 1);

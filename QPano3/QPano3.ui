@@ -49,7 +49,7 @@
      </widget>
     </item>
     <item row="2" column="1">
-     <widget class="QLabel" name="labelImg02">
+     <widget class="GwLabel" name="labelImg02">
       <property name="minimumSize">
        <size>
         <width>240</width>
@@ -62,13 +62,19 @@
         <height>480</height>
        </size>
       </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Sunken</enum>
+      </property>
       <property name="text">
        <string/>
       </property>
      </widget>
     </item>
     <item row="0" column="1">
-     <widget class="QLabel" name="labelImg01">
+     <widget class="GwLabel" name="labelImg01">
       <property name="enabled">
        <bool>true</bool>
       </property>
@@ -83,6 +89,12 @@
         <width>480</width>
         <height>480</height>
        </size>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Sunken</enum>
       </property>
       <property name="text">
        <string/>
@@ -198,6 +210,13 @@
   <widget class="QStatusBar" name="statusBar"/>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>GwLabel</class>
+   <extends>QLabel</extends>
+   <header location="global">gwlabel.h</header>
+  </customwidget>
+ </customwidgets>
  <tabstops>
   <tabstop>lineEditImagePath01</tabstop>
   <tabstop>pushButtonOpenImg01</tabstop>
