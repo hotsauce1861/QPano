@@ -8,6 +8,8 @@ using namespace cv;
 QPano3::QPano3(QWidget *parent)
 	: QMainWindow(parent){
 	ui.setupUi(this);
+	ui.labelImg01->setMouseTracking(true);
+	ui.labelImg02->setMouseTracking(true);
 }
 
 void QPano3::setImagePath01() {
@@ -58,6 +60,7 @@ void QPano3::showInputImage(QLabel & qlabel, QString ImgPath)
 void QPano3::showInputImage(QLabel & qlabel, QImage ImgData)
 {	
 	qlabel.setPixmap(QPixmap::fromImage(ImgData).scaled(qlabel.width(), qlabel.height() ));
+	
 }	
 void QPano3::processImagePath(InputImage index){
 	

@@ -28,6 +28,9 @@
       <Extensions>moc;h;cpp</Extensions>
       <SourceControlFiles>False</SourceControlFiles>
     </Filter>
+    <Filter Include="control">
+      <UniqueIdentifier>{9175f400-ce4a-4992-88ab-46fe34d7678c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -42,10 +45,16 @@
     <ClCompile Include="fishstitch.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="GwLabel.cpp">
+      <Filter>control</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="QPano3.h">
       <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="GwLabel.h">
+      <Filter>control</Filter>
     </QtMoc>
   </ItemGroup>
   <ItemGroup>
