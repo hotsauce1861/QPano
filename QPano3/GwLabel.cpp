@@ -3,6 +3,7 @@
 GwLabel::GwLabel(QWidget *parent)
 	: QLabel(parent)
 {
+	eState = IDLE;
 	state = 0;
 	mEdgeWidth = 100;
 	mMouseLeftPressed = false;
@@ -20,7 +21,7 @@ bool GwLabel::isInCircle(int x, int y)
 {
 	int deltaX = x - this->mCircleCoord->x();
 	int deltaY = y - this->mCircleCoord->y();
-	if ((deltaX*deltaX + deltaY * deltaY) < (this->mCircleRadius*this->mCircleRadius - mEdgeWidth)) {
+	if ((deltaX*deltaX + deltaY * deltaY) < ((mCircleRadius - mEdgeWidth) * (mCircleRadius - mEdgeWidth))) {
 		return true;
 	}
 	return false;
@@ -30,8 +31,8 @@ bool GwLabel::isOnCircleEdge(int x, int y)
 {
 	int deltaX = x - this->mCircleCoord->x();
 	int deltaY = y - this->mCircleCoord->y();
-	if ((deltaX*deltaX + deltaY * deltaY) >= (mCircleRadius * mCircleRadius - mEdgeWidth)
-		&& (deltaX*deltaX + deltaY * deltaY) <= (mCircleRadius * mCircleRadius + mEdgeWidth)) {
+	if ((deltaX*deltaX + deltaY * deltaY) >= ((mCircleRadius - mEdgeWidth) * (mCircleRadius - mEdgeWidth))
+		&& (deltaX*deltaX + deltaY * deltaY) <= ((mCircleRadius + mEdgeWidth) * (mCircleRadius + mEdgeWidth))) {
 		return true;
 	}
 	return false;
@@ -76,12 +77,19 @@ void GwLabel::mouseMoveEvent(QMouseEvent* e )
 	QPoint detalPos = mousepos - mOldMousePos;
 		
 	if (mMouseLeftPressed) {
-		if (state == 1) {
-	 			this->setCursor(Qt::SizeAllCursor);
-	 			*this->mCircleCoord += detalPos;
-	 			this->repaint();
-		}
-		else if(state == 2){
+
+		switch (eState)
+		{
+		default:
+		case GwLabel::IDLE:
+			this->setCursor(Qt::ArrowCursor);
+			break;
+		case GwLabel::MOVE:
+			this->setCursor(Qt::SizeAllCursor);
+			*this->mCircleCoord += detalPos;
+			this->repaint();
+			break;
+		case GwLabel::ZOOM:
 			this->setCursor(Qt::SizeFDiagCursor);
 			int detal = sqrt(detalPos.x()*detalPos.x() + detalPos.y()*detalPos.y());
 			if (isDetlaNegative(mOldMousePos, mousepos)) {
@@ -89,27 +97,8 @@ void GwLabel::mouseMoveEvent(QMouseEvent* e )
 			}
 			this->mCircleRadius += detal;
 			this->repaint();
+			break;
 		}
-		else {
-			this->setCursor(Qt::ArrowCursor);
-		}
-// 		if (this->isInCircle(mousepos.x(), mousepos.y())) {
-// 			this->setCursor(Qt::SizeAllCursor);
-// 			*this->mCircleCoord += detalPos;
-// 			this->repaint();
-// 		}
-// 		else if (this->isOnCircleEdge(mousepos.x(), mousepos.y())) {
-// 			this->setCursor(Qt::SizeFDiagCursor);
-//  			int detal = sqrt(detalPos.x()*detalPos.x() + detalPos.y()*detalPos.y());
-// 			if (isDetlaNegative(mOldMousePos,mousepos)) {
-// 				detal *= -1;
-// 			}
-// 			this->mCircleRadius += detal;
-// 			this->repaint();
-// 		}
-// 		else {
-// 			this->setCursor(Qt::ArrowCursor);
-// 		}
 	}
 	else {
 		if (this->isInCircle(mousepos.x(), mousepos.y())) {
@@ -131,26 +120,22 @@ void GwLabel::mousePressEvent(QMouseEvent *e)
 	this->mMouseLeftPressed = true;
 	if (this->isInCircle(mousepos.x(), mousepos.y())) {
 		this->setCursor(Qt::SizeAllCursor);
+		eState = MOVE;
 		state = 1;
 	}
 	else if (this->isOnCircleEdge(mousepos.x(), mousepos.y())) {
 		this->setCursor(Qt::SizeFDiagCursor);
-		state = 2;
+		eState = ZOOM; 
 	}
 	else {
 		this->setCursor(Qt::ArrowCursor);
-		state = 0;
+		eState = IDLE;
 	}
 }
 
 void GwLabel::mouseReleaseEvent(QMouseEvent *e)
 {
 	state = 0;
-// 	QPoint mousepos = e->pos();
  	this->mMouseLeftPressed = false;
-// 	if (this->isInCircle(mousepos.x(), mousepos.y())) {
-// 		this->setCursor(Qt::OpenHandCursor);
-// 
-// 	}
 }
 

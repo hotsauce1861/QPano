@@ -16,8 +16,13 @@ public:
 	~GwLabel();
 
 private:
+	enum CIRCLE_STATE{
+		IDLE,
+		MOVE,
+		ZOOM
+	};
 	int				state;
-
+	CIRCLE_STATE	eState;
 	float			mHeightRatio;
 	float			mWidthRatio;
 	QPoint			*mCircleCoord;

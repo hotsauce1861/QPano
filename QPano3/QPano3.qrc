@@ -1,3 +1,21 @@
 <RCC>
-    <qresource prefix="/QPano3"/>
+  <qresource prefix="/QPano3">
+    <file>Resources/qss/cool.qss</file>
+    <file>Resources/qss/black.css</file>
+    <file>Resources/qss/blue.css</file>
+    <file>Resources/qss/brown.css</file>
+    <file>Resources/qss/darkgray.css</file>
+    <file>Resources/qss/dev.css</file>
+    <file>Resources/qss/gray.css</file>
+    <file>Resources/qss/lightgray.css</file>
+    <file>Resources/qss/silvery.css</file>
+    <file>Resources/qss/black.qss</file>
+    <file>Resources/qss/Metro.qss</file>
+    <file>Resources/qss/BB.qss</file>
+    <file>Resources/qss/BW.qss</file>
+    <file>Resources/qss/GB.qss</file>
+    <file>Resources/qss/GBG.qss</file>
+    <file>Resources/qss/GG.qss</file>
+    <file>Resources/qss/GGG.qss</file>
+  </qresource>
 </RCC>

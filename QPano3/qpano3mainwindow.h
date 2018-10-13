@@ -4,7 +4,7 @@
 #include <QMainWindow>
 
 namespace Ui {
-class QPano3MainWindow;
+	class QPano3MainWindow;
 }
 
 class QPano3MainWindow : public QMainWindow
@@ -17,6 +17,11 @@ public:
 
 private:
     Ui::QPano3MainWindow *ui;
+
+
+private slots:
+	void			setInputFile();
+
 };
 
 #endif // QPANO3MAINWINDOW_H

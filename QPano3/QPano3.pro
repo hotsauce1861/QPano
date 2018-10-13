@@ -18,3 +18,12 @@ OBJECTS_DIR += debug
 UI_DIR += ./GeneratedFiles
 RCC_DIR += ./GeneratedFiles
 include(QPano3.pri)
+
+FORMS += \
+    qpano3mainwindow.ui
+
+HEADERS += \
+    qpano3mainwindow.h
+
+SOURCES += \
+    qpano3mainwindow.cpp

@@ -1,5 +1,6 @@
 #include "qpano3mainwindow.h"
 #include "ui_qpano3mainwindow.h"
+#include <QFileDialog>
 
 QPano3MainWindow::QPano3MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -11,4 +12,18 @@ QPano3MainWindow::QPano3MainWindow(QWidget *parent) :
 QPano3MainWindow::~QPano3MainWindow()
 {
     delete ui;
+}
+
+
+void QPano3MainWindow::setInputFile() {
+
+	QFileDialog *fdlg = new QFileDialog();
+	QStringList filename = fdlg->getOpenFileNames();
+	if (filename.size() <= 0) {
+		return ;
+	}
+	
+	ui->labelPanel->setInputImagesList(filename);
+	ui->labelPanel->update();
+
 }

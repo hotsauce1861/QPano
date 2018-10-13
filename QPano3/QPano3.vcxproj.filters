@@ -48,6 +48,12 @@
     <ClCompile Include="GwLabel.cpp">
       <Filter>control</Filter>
     </ClCompile>
+    <ClCompile Include="QPano3MainWindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GwLabelPanel.cpp">
+      <Filter>control</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="QPano3.h">
@@ -56,9 +62,18 @@
     <QtMoc Include="GwLabel.h">
       <Filter>control</Filter>
     </QtMoc>
+    <QtMoc Include="QPano3MainWindow.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="GwLabelPanel.h">
+      <Filter>control</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="QPano3.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="QPano3MainWindow.ui">
       <Filter>Form Files</Filter>
     </QtUic>
   </ItemGroup>
