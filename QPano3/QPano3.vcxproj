@@ -56,7 +56,7 @@
     <ClCompile>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <PreprocessorDefinitions>UNICODE;_UNICODE;WIN32;WIN64;QT_DLL;QT_CORE_LIB;QT_GUI_LIB;QT_WIDGETS_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.\GeneratedFiles;.;D:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include;.\GeneratedFiles\$(ConfigurationName);D:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore;D:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtGui;D:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtANGLE;D:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtWidgets;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Disabled</Optimization>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
@@ -65,30 +65,33 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <OutputFile>$(OutDir)\$(ProjectName).exe</OutputFile>
-      <AdditionalLibraryDirectories>$(QTDIR)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>D:\Qt\Qt5.11.2\5.11.2\msvc2017_64\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>qtmaind.lib;Qt5Cored.lib;Qt5Guid.lib;Qt5Widgetsd.lib;opencv_aruco342d.lib;opencv_photo342d.lib;opencv_bgsegm342d.lib;opencv_plot342d.lib;opencv_bioinspired342d.lib;opencv_reg342d.lib;opencv_calib3d342d.lib;opencv_rgbd342d.lib;opencv_ccalib342d.lib;opencv_saliency342d.lib;opencv_core342d.lib;opencv_shape342d.lib;opencv_datasets342d.lib;opencv_stereo342d.lib;opencv_dnn_objdetect342d.lib;opencv_stitching342d.lib;opencv_dnn342d.lib;opencv_structured_light342d.lib;opencv_dpm342d.lib;opencv_superres342d.lib;opencv_face342d.lib;opencv_surface_matching342d.lib;opencv_features2d342d.lib;opencv_text342d.lib;opencv_flann342d.lib;opencv_tracking342d.lib;opencv_fuzzy342d.lib;opencv_video342d.lib;opencv_hfs342d.lib;opencv_videoio342d.lib;opencv_highgui342d.lib;opencv_videostab342d.lib;opencv_img_hash342d.lib;opencv_xfeatures2d342d.lib;opencv_imgcodecs342d.lib;opencv_ximgproc342d.lib;opencv_imgproc342d.lib;opencv_xobjdetect342d.lib;opencv_line_descriptor342d.lib;opencv_xphoto342d.lib;opencv_ml342d.lib;opencv_objdetect342d.lib;opencv_optflow342d.lib;opencv_phase_unwrapping342d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>D:\Qt\Qt5.11.2\5.11.2\msvc2017_64\lib\qtmaind.lib;D:\Qt\Qt5.11.2\5.11.2\msvc2017_64\lib\Qt5Cored.lib;D:\Qt\Qt5.11.2\5.11.2\msvc2017_64\lib\Qt5Guid.lib;D:\Qt\Qt5.11.2\5.11.2\msvc2017_64\lib\Qt5Widgetsd.lib;opencv_aruco342d.lib;opencv_photo342d.lib;opencv_bgsegm342d.lib;opencv_plot342d.lib;opencv_bioinspired342d.lib;opencv_reg342d.lib;opencv_calib3d342d.lib;opencv_rgbd342d.lib;opencv_ccalib342d.lib;opencv_saliency342d.lib;opencv_core342d.lib;opencv_shape342d.lib;opencv_datasets342d.lib;opencv_stereo342d.lib;opencv_dnn_objdetect342d.lib;opencv_stitching342d.lib;opencv_dnn342d.lib;opencv_structured_light342d.lib;opencv_dpm342d.lib;opencv_superres342d.lib;opencv_face342d.lib;opencv_surface_matching342d.lib;opencv_features2d342d.lib;opencv_text342d.lib;opencv_flann342d.lib;opencv_tracking342d.lib;opencv_fuzzy342d.lib;opencv_video342d.lib;opencv_hfs342d.lib;opencv_videoio342d.lib;opencv_highgui342d.lib;opencv_videostab342d.lib;opencv_img_hash342d.lib;opencv_xfeatures2d342d.lib;opencv_imgcodecs342d.lib;opencv_ximgproc342d.lib;opencv_imgproc342d.lib;opencv_xobjdetect342d.lib;opencv_line_descriptor342d.lib;opencv_xphoto342d.lib;opencv_ml342d.lib;opencv_objdetect342d.lib;opencv_optflow342d.lib;opencv_phase_unwrapping342d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <QtMoc>
       <OutputFile>.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</OutputFile>
       <ExecutionDescription>Moc'ing %(Identity)...</ExecutionDescription>
       <IncludePath>.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;%(AdditionalIncludeDirectories)</IncludePath>
       <Define>UNICODE;_UNICODE;WIN32;WIN64;QT_DLL;QT_CORE_LIB;QT_GUI_LIB;QT_WIDGETS_LIB;%(PreprocessorDefinitions)</Define>
+      <QTDIR>D:\Qt\Qt5.11.2\5.11.2\msvc2017_64</QTDIR>
     </QtMoc>
     <QtUic>
       <ExecutionDescription>Uic'ing %(Identity)...</ExecutionDescription>
       <OutputFile>.\GeneratedFiles\ui_%(Filename).h</OutputFile>
+      <QTDIR>D:\Qt\Qt5.11.2\5.11.2\msvc2017_64</QTDIR>
     </QtUic>
     <QtRcc>
       <ExecutionDescription>Rcc'ing %(Identity)...</ExecutionDescription>
       <OutputFile>.\GeneratedFiles\qrc_%(Filename).cpp</OutputFile>
+      <QTDIR>D:\Qt\Qt5.11.2\5.11.2\msvc2017_64</QTDIR>
     </QtRcc>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <PreprocessorDefinitions>UNICODE;_UNICODE;WIN32;WIN64;QT_DLL;QT_NO_DEBUG;NDEBUG;QT_CORE_LIB;QT_GUI_LIB;QT_WIDGETS_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.\GeneratedFiles;.;D:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include;.\GeneratedFiles\$(ConfigurationName);D:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore;D:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtGui;D:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtANGLE;D:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtWidgets;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat />
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
@@ -96,36 +99,42 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <OutputFile>$(OutDir)\$(ProjectName).exe</OutputFile>
-      <AdditionalLibraryDirectories>$(QTDIR)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>D:\Qt\Qt5.11.2\5.11.2\msvc2017_64\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>false</GenerateDebugInformation>
-      <AdditionalDependencies>qtmain.lib;Qt5Core.lib;Qt5Gui.lib;Qt5Widgets.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>D:\Qt\Qt5.11.2\5.11.2\msvc2017_64\lib\qtmain.lib;D:\Qt\Qt5.11.2\5.11.2\msvc2017_64\lib\Qt5Core.lib;D:\Qt\Qt5.11.2\5.11.2\msvc2017_64\lib\Qt5Gui.lib;D:\Qt\Qt5.11.2\5.11.2\msvc2017_64\lib\Qt5Widgets.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <QtMoc>
       <OutputFile>.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</OutputFile>
       <ExecutionDescription>Moc'ing %(Identity)...</ExecutionDescription>
       <IncludePath>.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;%(AdditionalIncludeDirectories)</IncludePath>
       <Define>UNICODE;_UNICODE;WIN32;WIN64;QT_DLL;QT_NO_DEBUG;NDEBUG;QT_CORE_LIB;QT_GUI_LIB;QT_WIDGETS_LIB;%(PreprocessorDefinitions)</Define>
+      <QTDIR>D:\Qt\Qt5.11.2\5.11.2\msvc2017_64</QTDIR>
     </QtMoc>
     <QtUic>
       <ExecutionDescription>Uic'ing %(Identity)...</ExecutionDescription>
       <OutputFile>.\GeneratedFiles\ui_%(Filename).h</OutputFile>
+      <QTDIR>D:\Qt\Qt5.11.2\5.11.2\msvc2017_64</QTDIR>
     </QtUic>
     <QtRcc>
       <ExecutionDescription>Rcc'ing %(Identity)...</ExecutionDescription>
       <OutputFile>.\GeneratedFiles\qrc_%(Filename).cpp</OutputFile>
+      <QTDIR>D:\Qt\Qt5.11.2\5.11.2\msvc2017_64</QTDIR>
     </QtRcc>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="controls\GwLabel.cpp" />
+    <ClCompile Include="controls\GwLabelPanel.cpp" />
     <ClCompile Include="fisheye.cpp" />
     <ClCompile Include="fishstitch.cpp" />
-    <ClCompile Include="GwLabel.cpp" />
-    <ClCompile Include="GwLabelPanel.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="QPano3.cpp" />
     <ClCompile Include="QPano3MainWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <QtMoc Include="QPano3.h" />
+    <QtMoc Include="QPano3.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;D:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include;.\GeneratedFiles\$(ConfigurationName);D:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore;D:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtGui;D:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtANGLE;D:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtWidgets;%(AdditionalIncludeDirectories)</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;D:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include;.\GeneratedFiles\$(ConfigurationName);D:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore;D:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtGui;D:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtANGLE;D:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtWidgets;%(AdditionalIncludeDirectories)</IncludePath>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="QPano3.ui" />
@@ -135,24 +144,24 @@
     <QtRcc Include="QPano3.qrc" />
   </ItemGroup>
   <ItemGroup>
+    <QtMoc Include="controls\GwLabel.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;D:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include;.\GeneratedFiles\$(ConfigurationName)\.;D:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore;D:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtGui;D:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtANGLE;D:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtWidgets</IncludePath>
+      <Define Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">UNICODE;_UNICODE;WIN32;WIN64;QT_DLL;QT_CORE_LIB;QT_GUI_LIB;QT_WIDGETS_LIB</Define>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;D:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include;.\GeneratedFiles\$(ConfigurationName)\.;D:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore;D:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtGui;D:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtANGLE;D:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtWidgets</IncludePath>
+      <Define Condition="'$(Configuration)|$(Platform)'=='Release|x64'">UNICODE;_UNICODE;WIN32;WIN64;QT_DLL;QT_NO_DEBUG;NDEBUG;QT_CORE_LIB;QT_GUI_LIB;QT_WIDGETS_LIB</Define>
+    </QtMoc>
+    <QtMoc Include="controls\GwLabelPanel.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;D:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include;.\GeneratedFiles\$(ConfigurationName)\.;D:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore;D:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtGui;D:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtANGLE;D:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtWidgets</IncludePath>
+      <Define Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">UNICODE;_UNICODE;WIN32;WIN64;QT_DLL;QT_CORE_LIB;QT_GUI_LIB;QT_WIDGETS_LIB</Define>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;D:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include;.\GeneratedFiles\$(ConfigurationName)\.;D:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore;D:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtGui;D:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtANGLE;D:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtWidgets</IncludePath>
+      <Define Condition="'$(Configuration)|$(Platform)'=='Release|x64'">UNICODE;_UNICODE;WIN32;WIN64;QT_DLL;QT_NO_DEBUG;NDEBUG;QT_CORE_LIB;QT_GUI_LIB;QT_WIDGETS_LIB</Define>
+    </QtMoc>
     <ClInclude Include="fisheye.h" />
     <ClInclude Include="fishstitch.h" />
-    <QtMoc Include="GwLabelPanel.h">
-      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName)\.;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets</IncludePath>
-      <Define Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">UNICODE;_UNICODE;WIN32;WIN64;QT_DLL;QT_CORE_LIB;QT_GUI_LIB;QT_WIDGETS_LIB</Define>
-      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName)\.;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets</IncludePath>
-      <Define Condition="'$(Configuration)|$(Platform)'=='Release|x64'">UNICODE;_UNICODE;WIN32;WIN64;QT_DLL;QT_NO_DEBUG;NDEBUG;QT_CORE_LIB;QT_GUI_LIB;QT_WIDGETS_LIB</Define>
-    </QtMoc>
     <QtMoc Include="QPano3MainWindow.h">
-      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName)\.;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;D:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include;.\GeneratedFiles\$(ConfigurationName)\.;D:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore;D:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtGui;D:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtANGLE;D:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtWidgets</IncludePath>
       <Define Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">UNICODE;_UNICODE;WIN32;WIN64;QT_DLL;QT_CORE_LIB;QT_GUI_LIB;QT_WIDGETS_LIB</Define>
-      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName)\.;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets</IncludePath>
-      <Define Condition="'$(Configuration)|$(Platform)'=='Release|x64'">UNICODE;_UNICODE;WIN32;WIN64;QT_DLL;QT_NO_DEBUG;NDEBUG;QT_CORE_LIB;QT_GUI_LIB;QT_WIDGETS_LIB</Define>
-    </QtMoc>
-    <QtMoc Include="GwLabel.h">
-      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName)\.;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets</IncludePath>
-      <Define Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">UNICODE;_UNICODE;WIN32;WIN64;QT_DLL;QT_CORE_LIB;QT_GUI_LIB;QT_WIDGETS_LIB</Define>
-      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName)\.;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets</IncludePath>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;D:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include;.\GeneratedFiles\$(ConfigurationName)\.;D:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtCore;D:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtGui;D:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtANGLE;D:\Qt\Qt5.11.2\5.11.2\msvc2017_64\include\QtWidgets</IncludePath>
       <Define Condition="'$(Configuration)|$(Platform)'=='Release|x64'">UNICODE;_UNICODE;WIN32;WIN64;QT_DLL;QT_NO_DEBUG;NDEBUG;QT_CORE_LIB;QT_GUI_LIB;QT_WIDGETS_LIB</Define>
     </QtMoc>
   </ItemGroup>
@@ -164,7 +173,7 @@
   </ImportGroup>
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties MocDir=".\GeneratedFiles\$(ConfigurationName)" UicDir=".\GeneratedFiles" RccDir=".\GeneratedFiles" lupdateOptions="" lupdateOnBuild="0" lreleaseOptions="" Qt5Version_x0020_x64="QT11.2" MocOptions="" />
+      <UserProperties MocDir=".\GeneratedFiles\$(ConfigurationName)" UicDir=".\GeneratedFiles" RccDir=".\GeneratedFiles" lupdateOptions="" lupdateOnBuild="0" lreleaseOptions="" MocOptions="" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>

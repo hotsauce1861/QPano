@@ -9,7 +9,7 @@
 #ifndef UI_QPANO3MAINWINDOW_H
 #define UI_QPANO3MAINWINDOW_H
 
-#include <GwLabelPanel.h>
+
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QGridLayout>
@@ -24,6 +24,7 @@
 #include <QtWidgets/QToolButton>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
+#include "controls/GwLabelPanel.h"
 
 QT_BEGIN_NAMESPACE
 
@@ -37,7 +38,7 @@ public:
     QWidget *tab;
     QVBoxLayout *verticalLayout_2;
     QGridLayout *gridLayout;
-    QGroupBox *groupBox;
+    QGroupBox *groupBoxCameraParam;
     QToolButton *toolButtonSpinN;
     QPushButton *pushButtonAdvancedOpts;
     QPushButton *pushButtonStitchImg;
@@ -75,10 +76,10 @@ public:
         verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
         gridLayout = new QGridLayout();
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
-        groupBox = new QGroupBox(tab);
-        groupBox->setObjectName(QStringLiteral("groupBox"));
+        groupBoxCameraParam = new QGroupBox(tab);
+        groupBoxCameraParam->setObjectName(QStringLiteral("groupBoxCameraParam"));
 
-        gridLayout->addWidget(groupBox, 8, 0, 1, 4);
+        gridLayout->addWidget(groupBoxCameraParam, 8, 0, 1, 4);
 
         toolButtonSpinN = new QToolButton(tab);
         toolButtonSpinN->setObjectName(QStringLiteral("toolButtonSpinN"));
@@ -181,7 +182,7 @@ public:
     void retranslateUi(QMainWindow *QPano3MainWindow)
     {
         QPano3MainWindow->setWindowTitle(QApplication::translate("QPano3MainWindow", "MainWindow", nullptr));
-        groupBox->setTitle(QApplication::translate("QPano3MainWindow", "\347\233\270\346\234\272/\351\225\234\345\244\264\345\217\202\346\225\260", nullptr));
+        groupBoxCameraParam->setTitle(QApplication::translate("QPano3MainWindow", "\347\233\270\346\234\272/\351\225\234\345\244\264\345\217\202\346\225\260", nullptr));
         toolButtonSpinN->setText(QApplication::translate("QPano3MainWindow", "...", nullptr));
         pushButtonAdvancedOpts->setText(QApplication::translate("QPano3MainWindow", "\351\253\230\347\272\247 >>", nullptr));
         pushButtonStitchImg->setText(QApplication::translate("QPano3MainWindow", "2.\345\257\271\345\207\206\345\233\276\345\203\217...", nullptr));

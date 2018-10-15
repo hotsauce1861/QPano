@@ -7,6 +7,7 @@ QPano3MainWindow::QPano3MainWindow(QWidget *parent) :
     ui(new Ui::QPano3MainWindow)
 {
     ui->setupUi(this);
+	ui->groupBoxCameraParam->hide();
 	//ui->scrollAreaWidgetContents->setLayout(myformLayout);
 }
 

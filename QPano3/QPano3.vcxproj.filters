@@ -45,13 +45,13 @@
     <ClCompile Include="fishstitch.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GwLabel.cpp">
-      <Filter>control</Filter>
-    </ClCompile>
     <ClCompile Include="QPano3MainWindow.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GwLabelPanel.cpp">
+    <ClCompile Include="controls\GwLabel.cpp">
+      <Filter>control</Filter>
+    </ClCompile>
+    <ClCompile Include="controls\GwLabelPanel.cpp">
       <Filter>control</Filter>
     </ClCompile>
   </ItemGroup>
@@ -59,13 +59,13 @@
     <QtMoc Include="QPano3.h">
       <Filter>Header Files</Filter>
     </QtMoc>
-    <QtMoc Include="GwLabel.h">
-      <Filter>control</Filter>
-    </QtMoc>
     <QtMoc Include="QPano3MainWindow.h">
       <Filter>Header Files</Filter>
     </QtMoc>
-    <QtMoc Include="GwLabelPanel.h">
+    <QtMoc Include="controls\GwLabel.h">
+      <Filter>control</Filter>
+    </QtMoc>
+    <QtMoc Include="controls\GwLabelPanel.h">
       <Filter>control</Filter>
     </QtMoc>
   </ItemGroup>

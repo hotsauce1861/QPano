@@ -22,7 +22,7 @@
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QWidget>
-#include <gwlabel.h>
+#include "controls/GwLabel.h"
 
 QT_BEGIN_NAMESPACE
 
