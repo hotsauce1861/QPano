@@ -37,21 +37,21 @@ public:
     QWidget *tab;
     QVBoxLayout *verticalLayout_2;
     QGridLayout *gridLayout;
-    QSpacerItem *horizontalSpacer_3;
-    QSpacerItem *horizontalSpacer_2;
-    QPushButton *pushButtonStitchImg;
-    QPushButton *pushButtonOutputImg;
-    QSpacerItem *verticalSpacer;
-    QPushButton *pushButtonInputImg;
-    QPushButton *pushButtonAdvancedOpts;
-    QToolButton *toolButtonSpinP;
-    QSpacerItem *horizontalSpacer;
-    QSpacerItem *verticalSpacer_2;
     QGroupBox *groupBox;
     QToolButton *toolButtonSpinN;
+    QPushButton *pushButtonAdvancedOpts;
+    QPushButton *pushButtonStitchImg;
+    QSpacerItem *horizontalSpacer;
     QHBoxLayout *horizontalLayoutInputImgDock;
     GwLabelPanel *labelPanel;
     QSpacerItem *verticalSpacer_3;
+    QSpacerItem *verticalSpacer_2;
+    QSpacerItem *horizontalSpacer_3;
+    QToolButton *toolButtonSpinP;
+    QSpacerItem *horizontalSpacer_2;
+    QPushButton *pushButtonInputImg;
+    QPushButton *pushButtonOutputImg;
+    QSpacerItem *verticalSpacer;
     QWidget *tab_2;
     QMenuBar *menubar;
     QStatusBar *statusbar;
@@ -75,66 +75,37 @@ public:
         verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
         gridLayout = new QGridLayout();
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
-        horizontalSpacer_3 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        gridLayout->addItem(horizontalSpacer_3, 8, 1, 1, 3);
-
-        horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        gridLayout->addItem(horizontalSpacer_2, 1, 1, 1, 1);
-
-        pushButtonStitchImg = new QPushButton(tab);
-        pushButtonStitchImg->setObjectName(QStringLiteral("pushButtonStitchImg"));
-
-        gridLayout->addWidget(pushButtonStitchImg, 8, 0, 1, 1);
-
-        pushButtonOutputImg = new QPushButton(tab);
-        pushButtonOutputImg->setObjectName(QStringLiteral("pushButtonOutputImg"));
-
-        gridLayout->addWidget(pushButtonOutputImg, 9, 0, 1, 1);
-
-        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        gridLayout->addItem(verticalSpacer, 5, 3, 1, 1);
-
-        pushButtonInputImg = new QPushButton(tab);
-        pushButtonInputImg->setObjectName(QStringLiteral("pushButtonInputImg"));
-
-        gridLayout->addWidget(pushButtonInputImg, 1, 0, 1, 1);
-
-        pushButtonAdvancedOpts = new QPushButton(tab);
-        pushButtonAdvancedOpts->setObjectName(QStringLiteral("pushButtonAdvancedOpts"));
-
-        gridLayout->addWidget(pushButtonAdvancedOpts, 1, 2, 1, 2);
-
-        toolButtonSpinP = new QToolButton(tab);
-        toolButtonSpinP->setObjectName(QStringLiteral("toolButtonSpinP"));
-
-        gridLayout->addWidget(toolButtonSpinP, 3, 3, 1, 1);
-
-        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        gridLayout->addItem(horizontalSpacer, 9, 1, 1, 3);
-
-        verticalSpacer_2 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        gridLayout->addItem(verticalSpacer_2, 10, 0, 1, 4);
-
         groupBox = new QGroupBox(tab);
         groupBox->setObjectName(QStringLiteral("groupBox"));
 
-        gridLayout->addWidget(groupBox, 7, 0, 1, 4);
+        gridLayout->addWidget(groupBox, 8, 0, 1, 4);
 
         toolButtonSpinN = new QToolButton(tab);
         toolButtonSpinN->setObjectName(QStringLiteral("toolButtonSpinN"));
 
         gridLayout->addWidget(toolButtonSpinN, 4, 3, 1, 1);
 
+        pushButtonAdvancedOpts = new QPushButton(tab);
+        pushButtonAdvancedOpts->setObjectName(QStringLiteral("pushButtonAdvancedOpts"));
+
+        gridLayout->addWidget(pushButtonAdvancedOpts, 1, 2, 1, 2);
+
+        pushButtonStitchImg = new QPushButton(tab);
+        pushButtonStitchImg->setObjectName(QStringLiteral("pushButtonStitchImg"));
+
+        gridLayout->addWidget(pushButtonStitchImg, 9, 0, 1, 1);
+
+        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout->addItem(horizontalSpacer, 10, 1, 1, 3);
+
         horizontalLayoutInputImgDock = new QHBoxLayout();
         horizontalLayoutInputImgDock->setObjectName(QStringLiteral("horizontalLayoutInputImgDock"));
         labelPanel = new GwLabelPanel(tab);
         labelPanel->setObjectName(QStringLiteral("labelPanel"));
         labelPanel->setMinimumSize(QSize(200, 200));
+        labelPanel->setTextFormat(Qt::PlainText);
+        labelPanel->setAlignment(Qt::AlignCenter);
 
         horizontalLayoutInputImgDock->addWidget(labelPanel);
 
@@ -143,7 +114,38 @@ public:
 
         verticalSpacer_3 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
-        gridLayout->addItem(verticalSpacer_3, 6, 0, 1, 4);
+        gridLayout->addItem(verticalSpacer_3, 7, 0, 1, 4);
+
+        verticalSpacer_2 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        gridLayout->addItem(verticalSpacer_2, 11, 0, 1, 4);
+
+        horizontalSpacer_3 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout->addItem(horizontalSpacer_3, 9, 1, 1, 3);
+
+        toolButtonSpinP = new QToolButton(tab);
+        toolButtonSpinP->setObjectName(QStringLiteral("toolButtonSpinP"));
+
+        gridLayout->addWidget(toolButtonSpinP, 3, 3, 1, 1);
+
+        horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout->addItem(horizontalSpacer_2, 1, 1, 1, 1);
+
+        pushButtonInputImg = new QPushButton(tab);
+        pushButtonInputImg->setObjectName(QStringLiteral("pushButtonInputImg"));
+
+        gridLayout->addWidget(pushButtonInputImg, 1, 0, 1, 1);
+
+        pushButtonOutputImg = new QPushButton(tab);
+        pushButtonOutputImg->setObjectName(QStringLiteral("pushButtonOutputImg"));
+
+        gridLayout->addWidget(pushButtonOutputImg, 10, 0, 1, 1);
+
+        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        gridLayout->addItem(verticalSpacer, 5, 3, 1, 1);
 
 
         verticalLayout_2->addLayout(gridLayout);
@@ -179,14 +181,14 @@ public:
     void retranslateUi(QMainWindow *QPano3MainWindow)
     {
         QPano3MainWindow->setWindowTitle(QApplication::translate("QPano3MainWindow", "MainWindow", nullptr));
-        pushButtonStitchImg->setText(QApplication::translate("QPano3MainWindow", "2.\345\257\271\345\207\206\345\233\276\345\203\217...", nullptr));
-        pushButtonOutputImg->setText(QApplication::translate("QPano3MainWindow", "3.\345\210\233\345\273\272\345\205\250\346\231\257\345\233\276...", nullptr));
-        pushButtonInputImg->setText(QApplication::translate("QPano3MainWindow", "1.\345\212\240\350\275\275\345\233\276\345\203\217...", nullptr));
-        pushButtonAdvancedOpts->setText(QApplication::translate("QPano3MainWindow", "\351\253\230\347\272\247 >>", nullptr));
-        toolButtonSpinP->setText(QApplication::translate("QPano3MainWindow", "...", nullptr));
         groupBox->setTitle(QApplication::translate("QPano3MainWindow", "\347\233\270\346\234\272/\351\225\234\345\244\264\345\217\202\346\225\260", nullptr));
         toolButtonSpinN->setText(QApplication::translate("QPano3MainWindow", "...", nullptr));
-        labelPanel->setText(QString());
+        pushButtonAdvancedOpts->setText(QApplication::translate("QPano3MainWindow", "\351\253\230\347\272\247 >>", nullptr));
+        pushButtonStitchImg->setText(QApplication::translate("QPano3MainWindow", "2.\345\257\271\345\207\206\345\233\276\345\203\217...", nullptr));
+        labelPanel->setText(QApplication::translate("QPano3MainWindow", "\346\213\226\345\212\250\345\233\276\347\211\207\345\210\260\350\277\231\351\207\214", nullptr));
+        toolButtonSpinP->setText(QApplication::translate("QPano3MainWindow", "...", nullptr));
+        pushButtonInputImg->setText(QApplication::translate("QPano3MainWindow", "1.\345\212\240\350\275\275\345\233\276\345\203\217...", nullptr));
+        pushButtonOutputImg->setText(QApplication::translate("QPano3MainWindow", "3.\345\210\233\345\273\272\345\205\250\346\231\257\345\233\276...", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("QPano3MainWindow", "\351\241\271\347\233\256\345\212\251\346\211\213", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_2), QApplication::translate("QPano3MainWindow", "\346\272\220\345\233\276\345\203\217", nullptr));
     } // retranslateUi

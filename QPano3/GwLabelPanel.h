@@ -4,6 +4,7 @@
 #include <QHBoxLayout>
 #include <QLabel>
 #include <QStringList>
+#include <QScrollArea>
 
 #include <vector>
 
@@ -17,10 +18,14 @@ public:
 	void		setInputImagesList(QStringList imgs);
 	void		update();
 private:
+	const int				childLabelWidth = 150;
+	const int				childLabelHeight = 150;
+	QScrollArea				*mScrollArea;
 	QHBoxLayout				*mHBoxMainLayout;
-	std::vector<QLabel*>	mLabelList;
 	QStringList				mImageList;
+	std::vector<QLabel*>	mLabelList;
 
+	bool					eventFilter(QObject *watched, QEvent *event);
 };
 
 #endif // GWLABELPANEL_H
