@@ -5,7 +5,7 @@ GwLabel::GwLabel(QWidget *parent)
 {
 	eState = IDLE;
 	state = 0;
-	mEdgeWidth = 100;
+	mEdgeWidth = 10;
 	mMouseLeftPressed = false;
 	mCircleRadius = DEFAULE_RADIUS;
 	mCircleCoord = new QPoint(this->width() / 2, this->height() / 2);
@@ -31,8 +31,9 @@ bool GwLabel::isOnCircleEdge(int x, int y)
 {
 	int deltaX = x - this->mCircleCoord->x();
 	int deltaY = y - this->mCircleCoord->y();
-	if ((deltaX*deltaX + deltaY * deltaY) >= ((mCircleRadius - mEdgeWidth) * (mCircleRadius - mEdgeWidth))
-		&& (deltaX*deltaX + deltaY * deltaY) <= ((mCircleRadius + mEdgeWidth) * (mCircleRadius + mEdgeWidth))) {
+	int Rm2 = deltaX * deltaX + deltaY * deltaY;
+	if (Rm2 >= ((mCircleRadius - mEdgeWidth) * (mCircleRadius - mEdgeWidth))
+		&& Rm2 <= ((mCircleRadius + mEdgeWidth) * (mCircleRadius + mEdgeWidth))) {
 		return true;
 	}
 	return false;

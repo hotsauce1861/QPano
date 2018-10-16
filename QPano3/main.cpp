@@ -16,6 +16,6 @@ int main(int argc, char *argv[])
 // 		qApp->setStyleSheet(qss);
 // 	}	
 	w2.show();
-	//w.show();
+//	w.show();
 	return a.exec();
 }

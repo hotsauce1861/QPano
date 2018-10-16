@@ -31,7 +31,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
-    <IncludePath>D:\src\cpp\qt\QPano\QPano3\QPano3\3rdpart\opencv3.4\include;$(IncludePath)</IncludePath>
+    <IncludePath>D:\src\cpp\qt\QPano\QPano3\QPano3\controls;D:\src\cpp\qt\QPano\QPano3\QPano3\3rdpart\opencv3.4\include;$(IncludePath)</IncludePath>
     <LibraryPath>D:\src\cpp\qt\QPano\QPano3\QPano3\3rdpart\opencv3.4\x64\vc15\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">

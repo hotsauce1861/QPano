@@ -21,6 +21,8 @@ private:
 		MOVE,
 		ZOOM
 	};
+
+	 
 	int				state;
 	CIRCLE_STATE	eState;
 	float			mHeightRatio;
