@@ -69,20 +69,26 @@ bool GwLabelPanel::eventFilter(QObject *watched, QEvent *event) {
 			if (urls.isEmpty()) { 
 				return true; 
 			}
-			QString path = urls.first().toLocalFile();
-			// [[4]]: 在label上显示拖放的图片
-			QImage image(path); // QImage对I/O优化过, QPixmap对显示优化
-
-			if (!image.isNull()) {
-				image = image.scaled(childImageWidth, childImageHeight,
-					Qt::KeepAspectRatio,
-					Qt::SmoothTransformation);
-
-				QLabel *tmpLabel = getInsertImageLabel(image);
-				this->mLabelList.push_back(tmpLabel);
-				//this->mHBoxMainLayout->addWidget(tmpLabel);	
-				this->mHBoxMainLayout->addWidget(tmpLabel);
+			else {
+				for (int i=0;i<urls.size();i++){
+					mImageList.push_back(urls[i].toLocalFile());
+				}
 			}
+			this->update();
+// 			QString path = urls.first().toLocalFile();
+// 			// [[4]]: 在label上显示拖放的图片
+// 			QImage image(path); // QImage对I/O优化过, QPixmap对显示优化
+// 
+// 			if (!image.isNull()) {
+// 				image = image.scaled(childImageWidth, childImageHeight,
+// 					Qt::KeepAspectRatio,
+// 					Qt::SmoothTransformation);
+// 
+// 				QLabel *tmpLabel = getInsertImageLabel(image);
+// 				this->mLabelList.push_back(tmpLabel);
+// 				//this->mHBoxMainLayout->addWidget(tmpLabel);	
+// 				this->mHBoxMainLayout->addWidget(tmpLabel);
+// 			}
 			return true;
 		}
 	}
@@ -90,25 +96,19 @@ bool GwLabelPanel::eventFilter(QObject *watched, QEvent *event) {
 }
 void GwLabelPanel::setInputImagesList(QStringList imgs)
 {
-	mutex.lock();
-	for (int i = 0; i<imgs.size(); i++){
-		mImageList.push_back(imgs[i]);
-	}
-	mutex.unlock();
+	mImageList = imgs;
 }
 
 void GwLabelPanel::update()
 {	
-	for (int i = 0;i<mImageList.size();i++){
-
+	while (mImageList.size()){
 		QLabel *tmpLabel = new QLabel;
-		QImage tmpImg(mImageList[i]);
-	
+		QImage tmpImg(mImageList.front());
+		mImageList.pop_front();
 		tmpLabel = getInsertImageLabel(tmpImg);
 		this->mLabelList.push_back(tmpLabel);
-				
-		this->mHBoxMainLayout->addWidget(tmpLabel);	
-		
+
+		this->mHBoxMainLayout->addWidget(tmpLabel);
 	}
 }
 

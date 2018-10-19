@@ -18,7 +18,6 @@ public:
 
 private:
     Ui::QPano3MainWindow	*ui;
-	GwLabelPanel			*mLabelPanel;
 
 private slots:
 	void			setInputFile();

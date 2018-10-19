@@ -27,7 +27,7 @@ void QPano3MainWindow::setInputFile() {
 	if (filename.size() <= 0) {
 		return ;
 	}	
-	mLabelPanel->setInputImagesList(filename);
-	mLabelPanel->update();
+	ui->labelImagePanel->setInputImagesList(filename);
+	ui->labelImagePanel->update();
 
 }

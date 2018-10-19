@@ -13,6 +13,8 @@ public:
 	~GwScrollArea();
 	void		setInputImagesList(QStringList imgs);
 	void		update();
+protected:
+	bool					eventFilter(QObject *watched, QEvent *event);
 private:
 	const int				childLabelWidth = 150;
 	const int				childLabelHeight = 150;
@@ -21,7 +23,7 @@ private:
 	QStringList				mImageList;
 	std::vector<QLabel*>	mLabelList;
 
-	bool					eventFilter(QObject *watched, QEvent *event);
+	
 };
 
 #endif

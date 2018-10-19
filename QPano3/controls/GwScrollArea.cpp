@@ -11,6 +11,7 @@
 GwScrollArea::GwScrollArea(QWidget *parent)
 	:QScrollArea(parent)
 {
+
 	mHBoxMainLayout = new QHBoxLayout(parent);
 	this->installEventFilter(this);
 	this->setAcceptDrops(true);

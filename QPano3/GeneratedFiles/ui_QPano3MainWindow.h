@@ -49,7 +49,7 @@ public:
     QSpacerItem *horizontalSpacer;
     QGroupBox *groupBoxCameraParam;
     QHBoxLayout *horizontalLayoutInputImgDock;
-    GwLabelPanel *label_11;
+    GwLabelPanel *labelImagePanel;
     QSpacerItem *verticalSpacer_2;
     QToolButton *toolButtonSpinN;
     QPushButton *pushButtonInputImg;
@@ -140,10 +140,10 @@ public:
         horizontalLayoutInputImgDock = new QHBoxLayout();
         horizontalLayoutInputImgDock->setObjectName(QStringLiteral("horizontalLayoutInputImgDock"));
         horizontalLayoutInputImgDock->setContentsMargins(-1, 5, -1, -1);
-        label_11 = new GwLabelPanel(tab);
-        label_11->setObjectName(QStringLiteral("label_11"));
+        labelImagePanel = new GwLabelPanel(tab);
+        labelImagePanel->setObjectName(QStringLiteral("labelImagePanel"));
 
-        horizontalLayoutInputImgDock->addWidget(label_11);
+        horizontalLayoutInputImgDock->addWidget(labelImagePanel);
 
 
         gridLayout->addLayout(horizontalLayoutInputImgDock, 3, 0, 3, 3);
@@ -340,7 +340,7 @@ public:
         pushButtonStitchImg->setText(QApplication::translate("QPano3MainWindow", "2.\345\257\271\345\207\206\345\233\276\345\203\217...", nullptr));
         toolButtonSpinP->setText(QApplication::translate("QPano3MainWindow", "...", nullptr));
         groupBoxCameraParam->setTitle(QApplication::translate("QPano3MainWindow", "\347\233\270\346\234\272/\351\225\234\345\244\264\345\217\202\346\225\260", nullptr));
-        label_11->setText(QString());
+        labelImagePanel->setText(QString());
         toolButtonSpinN->setText(QApplication::translate("QPano3MainWindow", "...", nullptr));
         pushButtonInputImg->setText(QApplication::translate("QPano3MainWindow", "1.\345\212\240\350\275\275\345\233\276\345\203\217...", nullptr));
         pushButtonOutputImg->setText(QApplication::translate("QPano3MainWindow", "3.\345\210\233\345\273\272\345\205\250\346\231\257\345\233\276...", nullptr));

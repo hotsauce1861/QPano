@@ -36,7 +36,7 @@ private:
 	QScrollArea				*mScrollArea;
 	QHBoxLayout				*mHBoxMainLayout;
 	QHBoxLayout				*mMotherMainLayout;
-	QGridLayout				*mGridLayout;
+
 	QStringList				mImageList;
 	std::vector<QLabel*>	mLabelList;
 
