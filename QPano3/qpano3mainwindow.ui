@@ -14,13 +14,13 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QVBoxLayout" name="verticalLayout">
+   <layout class="QHBoxLayout" name="horizontalLayout_2">
     <item>
      <layout class="QGridLayout" name="gridLayout_4">
       <item row="0" column="0">
        <widget class="QTabWidget" name="tabWidget">
         <property name="currentIndex">
-         <number>1</number>
+         <number>0</number>
         </property>
         <widget class="QWidget" name="tab">
          <attribute name="title">
@@ -107,21 +107,9 @@
                <number>5</number>
               </property>
               <item>
-               <widget class="GwLabelPanel" name="labelPanel">
-                <property name="minimumSize">
-                 <size>
-                  <width>200</width>
-                  <height>200</height>
-                 </size>
-                </property>
+               <widget class="GwLabelPanel" name="label_11">
                 <property name="text">
-                 <string>拖动图片到这里</string>
-                </property>
-                <property name="textFormat">
-                 <enum>Qt::PlainText</enum>
-                </property>
-                <property name="alignment">
-                 <set>Qt::AlignCenter</set>
+                 <string/>
                 </property>
                </widget>
               </item>
@@ -207,7 +195,7 @@
                </size>
               </property>
               <property name="text">
-               <string>TextLabel</string>
+               <string>如果您的图像需要剪裁，可以在下面操作。剪裁不会改变原始图像文件。</string>
               </property>
              </widget>
             </item>
@@ -219,18 +207,48 @@
              </widget>
             </item>
             <item>
-             <layout class="QGridLayout" name="gridLayout_3">
-              <item row="6" column="1" colspan="2">
-               <widget class="QLabel" name="label_7">
+             <layout class="QGridLayout" name="gridLayout_3" columnstretch="0,0,0,0">
+              <item row="0" column="0" rowspan="12">
+               <widget class="QTabWidget" name="tabWidget_2">
+                <property name="currentIndex">
+                 <number>0</number>
+                </property>
+                <widget class="QWidget" name="tab_4">
+                 <attribute name="title">
+                  <string>Tab 1</string>
+                 </attribute>
+                 <widget class="GwLabel" name="label_10">
+                  <property name="geometry">
+                   <rect>
+                    <x>0</x>
+                    <y>0</y>
+                    <width>461</width>
+                    <height>241</height>
+                   </rect>
+                  </property>
+                  <property name="text">
+                   <string/>
+                  </property>
+                 </widget>
+                </widget>
+                <widget class="QWidget" name="tab_5">
+                 <attribute name="title">
+                  <string>Tab 2</string>
+                 </attribute>
+                </widget>
+               </widget>
+              </item>
+              <item row="5" column="1">
+               <widget class="QLabel" name="label_8">
                 <property name="text">
-                 <string>TextLabel</string>
+                 <string>宽度：</string>
                 </property>
                </widget>
               </item>
-              <item row="5" column="1" colspan="2">
-               <widget class="QLabel" name="label_8">
+              <item row="6" column="1">
+               <widget class="QLabel" name="label_7">
                 <property name="text">
-                 <string>TextLabel</string>
+                 <string>高度：</string>
                 </property>
                </widget>
               </item>
@@ -247,34 +265,7 @@
                 </property>
                </spacer>
               </item>
-              <item row="6" column="3">
-               <widget class="QPushButton" name="pushButton_4">
-                <property name="text">
-                 <string>PushButton</string>
-                </property>
-               </widget>
-              </item>
-              <item row="4" column="2" colspan="2">
-               <widget class="QLineEdit" name="lineEdit_2"/>
-              </item>
-              <item row="5" column="3">
-               <widget class="QPushButton" name="pushButton_3">
-                <property name="text">
-                 <string>PushButton</string>
-                </property>
-               </widget>
-              </item>
-              <item row="1" column="2" colspan="2">
-               <widget class="QLineEdit" name="lineEdit">
-                <property name="minimumSize">
-                 <size>
-                  <width>20</width>
-                  <height>0</height>
-                 </size>
-                </property>
-               </widget>
-              </item>
-              <item row="13" column="0" colspan="3">
+              <item row="12" column="0" colspan="3">
                <spacer name="horizontalSpacer_4">
                 <property name="orientation">
                  <enum>Qt::Horizontal</enum>
@@ -287,75 +278,10 @@
                 </property>
                </spacer>
               </item>
-              <item row="0" column="2" colspan="2">
-               <widget class="QPushButton" name="pushButton_2">
-                <property name="text">
-                 <string>PushButton</string>
-                </property>
-               </widget>
-              </item>
-              <item row="0" column="1">
-               <widget class="QLabel" name="label_6">
-                <property name="text">
-                 <string>TextLabel</string>
-                </property>
-               </widget>
-              </item>
-              <item row="10" column="2" colspan="2">
-               <widget class="QComboBox" name="comboBox"/>
-              </item>
-              <item row="1" column="1">
-               <widget class="QLabel" name="label_5">
-                <property name="text">
-                 <string>TextLabel</string>
-                </property>
-               </widget>
-              </item>
               <item row="8" column="1" colspan="3">
                <widget class="QPushButton" name="pushButton">
                 <property name="text">
-                 <string>PushButton</string>
-                </property>
-               </widget>
-              </item>
-              <item row="2" column="2" colspan="2">
-               <widget class="QLineEdit" name="lineEdit_4"/>
-              </item>
-              <item row="7" column="1" colspan="3">
-               <widget class="QCheckBox" name="checkBox">
-                <property name="text">
-                 <string>CheckBox</string>
-                </property>
-               </widget>
-              </item>
-              <item row="3" column="1">
-               <widget class="QLabel" name="label_3">
-                <property name="text">
-                 <string>TextLabel</string>
-                </property>
-               </widget>
-              </item>
-              <item row="3" column="2" colspan="2">
-               <widget class="QLineEdit" name="lineEdit_3"/>
-              </item>
-              <item row="10" column="1">
-               <widget class="QLabel" name="label_9">
-                <property name="text">
-                 <string>TextLabel</string>
-                </property>
-               </widget>
-              </item>
-              <item row="2" column="1">
-               <widget class="QLabel" name="label_2">
-                <property name="text">
-                 <string>TextLabel</string>
-                </property>
-               </widget>
-              </item>
-              <item row="4" column="1">
-               <widget class="QLabel" name="label_4">
-                <property name="text">
-                 <string>TextLabel</string>
+                 <string>不剪裁</string>
                 </property>
                </widget>
               </item>
@@ -384,18 +310,56 @@
                 </item>
                </layout>
               </item>
-              <item row="0" column="0" rowspan="12">
-               <widget class="QTabWidget" name="tabWidget_2">
-                <widget class="QWidget" name="tab_4">
-                 <attribute name="title">
-                  <string>Tab 1</string>
-                 </attribute>
-                </widget>
-                <widget class="QWidget" name="tab_5">
-                 <attribute name="title">
-                  <string>Tab 2</string>
-                 </attribute>
-                </widget>
+              <item row="0" column="1">
+               <widget class="QLabel" name="label_6">
+                <property name="text">
+                 <string>剪裁</string>
+                </property>
+               </widget>
+              </item>
+              <item row="10" column="2" colspan="2">
+               <widget class="QComboBox" name="comboBox"/>
+              </item>
+              <item row="1" column="1">
+               <widget class="QLabel" name="label_5">
+                <property name="text">
+                 <string>左：</string>
+                </property>
+               </widget>
+              </item>
+              <item row="7" column="1" colspan="3">
+               <widget class="QCheckBox" name="checkBox">
+                <property name="text">
+                 <string>个别剪裁</string>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="1">
+               <widget class="QLabel" name="label_3">
+                <property name="text">
+                 <string>上：</string>
+                </property>
+               </widget>
+              </item>
+              <item row="10" column="1">
+               <widget class="QLabel" name="label_9">
+                <property name="text">
+                 <string>缩放：</string>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="1">
+               <widget class="QLabel" name="label_2">
+                <property name="text">
+                 <string>右：</string>
+                </property>
+               </widget>
+              </item>
+              <item row="4" column="1">
+               <widget class="QLabel" name="label_4">
+                <property name="text">
+                 <string>下：</string>
+                </property>
                </widget>
               </item>
              </layout>
@@ -429,9 +393,14 @@
  </widget>
  <customwidgets>
   <customwidget>
+   <class>GwLabel</class>
+   <extends>QLabel</extends>
+   <header>GwLabel.h</header>
+  </customwidget>
+  <customwidget>
    <class>GwLabelPanel</class>
    <extends>QLabel</extends>
-   <header>GwLabelPanel.h</header>
+   <header location="global">GwLabelPanel.h</header>
   </customwidget>
  </customwidgets>
  <resources>

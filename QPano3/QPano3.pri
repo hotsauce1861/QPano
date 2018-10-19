@@ -7,10 +7,21 @@
 message("You are running qmake on a generated .pro file. This may not work!")
 
 
-HEADERS += ./QPano3.h \
-    ./fisheye.h
-SOURCES += ./main.cpp \
+HEADERS += ./fisheye.h \
+    ./fishstitch.h \
+    ./QPano3.h \
+    ./QPano3MainWindow.h \
+    ./controls/GwScrollArea.h \
+    ./controls/GwLabel.h \
+    ./controls/GwLabelPanel.h
+SOURCES += ./fisheye.cpp \
+    ./fishstitch.cpp \
+    ./main.cpp \
     ./QPano3.cpp \
-    ./fisheye.cpp
-FORMS += ./QPano3.ui
+    ./QPano3MainWindow.cpp \
+    ./controls/GwLabel.cpp \
+    ./controls/GwLabelPanel.cpp \
+    ./controls/GwScrollArea.cpp
+FORMS += ./QPano3.ui \
+    ./QPano3MainWindow.ui
 RESOURCES += QPano3.qrc

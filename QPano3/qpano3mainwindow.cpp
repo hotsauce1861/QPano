@@ -7,8 +7,11 @@ QPano3MainWindow::QPano3MainWindow(QWidget *parent) :
     ui(new Ui::QPano3MainWindow)
 {
     ui->setupUi(this);
+	//mLabelPanel = new GwLabelPanel(this);
 	ui->groupBoxCameraParam->hide();
-	//ui->scrollAreaWidgetContents->setLayout(myformLayout);
+	//ui->horizontalLayoutInputImgDock->addWidget(mLabelPanel);
+	//ui->scrollArea->setWidget(mLabelPanel);
+	//ui->scrollAreaWidgetContents->setLayout(ui->horizontalLayoutInputImgDock);
 }
 
 QPano3MainWindow::~QPano3MainWindow()
@@ -23,9 +26,8 @@ void QPano3MainWindow::setInputFile() {
 	QStringList filename = fdlg->getOpenFileNames();
 	if (filename.size() <= 0) {
 		return ;
-	}
-	
-	ui->labelPanel->setInputImagesList(filename);
-	ui->labelPanel->update();
+	}	
+	mLabelPanel->setInputImagesList(filename);
+	mLabelPanel->update();
 
 }

@@ -6,25 +6,42 @@
 #include <QList>
 #include <QUrl>
 #include <QMimeData>
+#include <QMessageBox>
+#include <QPushButton>
 
 GwLabelPanel::GwLabelPanel(QWidget *parent)
 	: QLabel(parent)
 {
-	mHBoxMainLayout = new QHBoxLayout(parent);
-	//this->installEventFilter(this);
+	this->setText("");
+	mHBoxMainLayout = new QHBoxLayout(this);
+	mMotherMainLayout = new QHBoxLayout(this);
+	mWidget = new QWidget(this);
+
+	mScrollArea = new QScrollArea(this);
+	mScrollArea->setSizePolicy(QSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding));
+	mScrollArea->setWidgetResizable(true);
+	
+	this->setMinimumHeight(thisWidgetHeight);
 	this->installEventFilter(this);
 	this->setAcceptDrops(true);	
+	this->setScaledContents(true);
 	this->setStyleSheet(
-		"QLabel{"
+		"QScrollArea{"
 		"font-size:20px;"
 		"border:2px dashed gray;"
 		"border-radius:10px;"
 		"background:rgba(25,25,25,25);"
 		"}");
+ 	mHBoxMainLayout->setAlignment(Qt::AlignLeft);	
+	//here lose this code
+	mHBoxMainLayout->setSizeConstraint(QHBoxLayout::SetMinAndMaxSize);
 
-	mHBoxMainLayout->setAlignment(Qt::AlignLeft);		
-	this->setLayout(mHBoxMainLayout);
 	
+	this->mWidget->setLayout(mHBoxMainLayout);
+	mScrollArea->setWidget(mWidget);
+
+	mMotherMainLayout->addWidget(mScrollArea);
+	this->setLayout(mMotherMainLayout);
 }
 
 GwLabelPanel::~GwLabelPanel()
@@ -38,7 +55,6 @@ bool GwLabelPanel::eventFilter(QObject *watched, QEvent *event) {
 		if (event->type() == QEvent::DragEnter) {
 
 			// [[2]]: 当拖放时鼠标进入label时, label接受拖放的动作
-
 			QDragEnterEvent *dee = dynamic_cast<QDragEnterEvent *>(event);
 
 			dee->acceptProposedAction();
@@ -58,13 +74,13 @@ bool GwLabelPanel::eventFilter(QObject *watched, QEvent *event) {
 			QImage image(path); // QImage对I/O优化过, QPixmap对显示优化
 
 			if (!image.isNull()) {
-				image = image.scaled(childLabelHeight, childLabelWidth,
+				image = image.scaled(childImageWidth, childImageHeight,
 					Qt::KeepAspectRatio,
 					Qt::SmoothTransformation);
 
-				QLabel *tmpLabel = new QLabel(this);
-				tmpLabel->setPixmap(QPixmap::fromImage(image));
+				QLabel *tmpLabel = getInsertImageLabel(image);
 				this->mLabelList.push_back(tmpLabel);
+				//this->mHBoxMainLayout->addWidget(tmpLabel);	
 				this->mHBoxMainLayout->addWidget(tmpLabel);
 			}
 			return true;
@@ -74,25 +90,40 @@ bool GwLabelPanel::eventFilter(QObject *watched, QEvent *event) {
 }
 void GwLabelPanel::setInputImagesList(QStringList imgs)
 {
-	this->mImageList = imgs;
+	mutex.lock();
+	for (int i = 0; i<imgs.size(); i++){
+		mImageList.push_back(imgs[i]);
+	}
+	mutex.unlock();
 }
 
 void GwLabelPanel::update()
 {	
 	for (int i = 0;i<mImageList.size();i++){
 
-		QLabel *tmpLabel = new QLabel(mScrollArea);
-		QImage *tmpImg = new QImage;
-		tmpImg->load(mImageList[i]);
-		tmpLabel->setFixedSize(childLabelWidth, childLabelHeight);
-		tmpLabel->setPixmap(QPixmap::fromImage(*tmpImg)
-			.scaledToHeight(tmpLabel->height())
-			.scaledToWidth(tmpLabel->width()) );
-		tmpLabel->setAlignment(Qt::AlignLeft);
+		QLabel *tmpLabel = new QLabel;
+		QImage tmpImg(mImageList[i]);
+	
+		tmpLabel = getInsertImageLabel(tmpImg);
 		this->mLabelList.push_back(tmpLabel);
-		
-		
-		this->mHBoxMainLayout->addWidget(tmpLabel);
+				
+		this->mHBoxMainLayout->addWidget(tmpLabel);	
 		
 	}
+}
+
+QLabel* GwLabelPanel::getInsertImageLabel(QImage image)
+{
+	QLabel *tmpLabel = new QLabel(this);
+	tmpLabel->setFixedSize(childLabelWidth ,childLabelHeight);
+	tmpLabel->setPixmap(QPixmap::fromImage(image)
+		.scaledToHeight(childImageWidth)
+		.scaledToWidth(childImageHeight)
+	);
+	return tmpLabel;
+}
+
+void GwLabelPanel::childLabelClicked(QStringList imgs, int index)
+{
+	QMessageBox::information(NULL, "error", "Stitcher result is error");
 }

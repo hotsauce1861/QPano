@@ -5,6 +5,7 @@
 #include <QLabel>
 #include <QStringList>
 #include <QScrollArea>
+#include <QMutex>
 
 #include <vector>
 
@@ -15,13 +16,27 @@ class GwLabelPanel : public QLabel
 public:
 	GwLabelPanel(QWidget *parent);
 	~GwLabelPanel();
-	void		setInputImagesList(QStringList imgs);
-	void		update();
+	void					setInputImagesList(QStringList imgs);
+	void					update();
+
 private:
-	const int				childLabelWidth = 150;
-	const int				childLabelHeight = 150;
+	QLabel*					getInsertImageLabel(QImage image);
+
+protected slots:
+	void					childLabelClicked(QStringList imgs,int index);
+private:
+	const int				thisWidgetHeight = 180;
+	const int				childLabelWidth = 120;
+	const int				childLabelHeight = 120;
+	const int				childImageWidth = 120;
+	const int				childImageHeight = 120;
+
+	QMutex					mutex;
+	QWidget					*mWidget;
 	QScrollArea				*mScrollArea;
 	QHBoxLayout				*mHBoxMainLayout;
+	QHBoxLayout				*mMotherMainLayout;
+	QGridLayout				*mGridLayout;
 	QStringList				mImageList;
 	std::vector<QLabel*>	mLabelList;
 

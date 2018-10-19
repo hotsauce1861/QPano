@@ -43,6 +43,10 @@ private:
 	void			mouseMoveEvent(QMouseEvent *e);
 	void			mousePressEvent(QMouseEvent *e);
 	void			mouseReleaseEvent(QMouseEvent *e);
+
+signals:
+	void			clicked(bool flag);
+
 };
 
 #endif // !1

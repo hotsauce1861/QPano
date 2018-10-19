@@ -2,6 +2,7 @@
 #define QPANO3MAINWINDOW_H
 
 #include <QMainWindow>
+#include "GwLabelPanel.h"
 
 namespace Ui {
 	class QPano3MainWindow;
@@ -16,8 +17,8 @@ public:
     ~QPano3MainWindow();
 
 private:
-    Ui::QPano3MainWindow *ui;
-
+    Ui::QPano3MainWindow	*ui;
+	GwLabelPanel			*mLabelPanel;
 
 private slots:
 	void			setInputFile();
