@@ -15,6 +15,7 @@ GwLabel::GwLabel(QWidget *parent)
 
 GwLabel::~GwLabel()
 {
+
 }
 
 bool GwLabel::isInCircle(int x, int y)
@@ -54,9 +55,9 @@ bool GwLabel::isDetlaNegative(QPoint ori, QPoint dst)
 
 void GwLabel::paintEvent(QPaintEvent *event)
 {
-	int R2 = mCircleRadius * 2;
 	QLabel::paintEvent(event);
 
+	int R2 = mCircleRadius * 2;
 	mPaint = new QPainter(this);
 	mPaint->setPen(QPen(Qt::white, 1, Qt::DotLine));
 
@@ -71,10 +72,9 @@ void GwLabel::showEvent(QShowEvent * event)
 }
 
 
-void GwLabel::mouseMoveEvent(QMouseEvent* e )
+void GwLabel::mouseMoveEvent(QMouseEvent* event)
 {
-
-	QPoint mousepos = e->pos();
+	QPoint mousepos = event->pos();
 	QPoint detalPos = mousepos - mOldMousePos;
 		
 	if (mMouseLeftPressed) {
@@ -115,9 +115,9 @@ void GwLabel::mouseMoveEvent(QMouseEvent* e )
 	mOldMousePos = mousepos;	//保存上一个鼠标位置
 }
 
-void GwLabel::mousePressEvent(QMouseEvent *e)
+void GwLabel::mousePressEvent(QMouseEvent *event)
 {
-	QPoint mousepos = e->pos();
+	QPoint mousepos = event->pos();
 	this->mMouseLeftPressed = true;
 	if (this->isInCircle(mousepos.x(), mousepos.y())) {
 		this->setCursor(Qt::SizeAllCursor);
@@ -134,9 +134,9 @@ void GwLabel::mousePressEvent(QMouseEvent *e)
 	}
 }
 
-void GwLabel::mouseReleaseEvent(QMouseEvent *e)
+void GwLabel::mouseReleaseEvent(QMouseEvent *event)
 {
-	state = 0;
  	this->mMouseLeftPressed = false;
+	emit clicked(true);
 }
 

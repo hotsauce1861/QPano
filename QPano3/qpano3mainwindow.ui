@@ -22,7 +22,7 @@
         <property name="currentIndex">
          <number>0</number>
         </property>
-        <widget class="QWidget" name="tab">
+        <widget class="QWidget" name="tabPageAssist">
          <attribute name="title">
           <string>项目助手</string>
          </attribute>
@@ -109,7 +109,10 @@
               <item>
                <widget class="GwLabelPanel" name="labelImagePanel">
                 <property name="text">
-                 <string/>
+                 <string>拖拽图片到此</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
                 </property>
                </widget>
               </item>
@@ -173,7 +176,7 @@
           </item>
          </layout>
         </widget>
-        <widget class="QWidget" name="tab_3">
+        <widget class="QWidget" name="tabPageEditImg">
          <attribute name="title">
           <string>剪裁</string>
          </attribute>
@@ -368,7 +371,7 @@
           </item>
          </layout>
         </widget>
-        <widget class="QWidget" name="tab_2">
+        <widget class="QWidget" name="tabPageSrcImg">
          <attribute name="title">
           <string>源图像</string>
          </attribute>

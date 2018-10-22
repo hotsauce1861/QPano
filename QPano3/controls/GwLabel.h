@@ -40,9 +40,9 @@ private:
 	//重写鼠标事件
 	void			paintEvent(QPaintEvent* event);
 	void			showEvent(QShowEvent *event);
-	void			mouseMoveEvent(QMouseEvent *e);
-	void			mousePressEvent(QMouseEvent *e);
-	void			mouseReleaseEvent(QMouseEvent *e);
+	void			mouseMoveEvent(QMouseEvent *event);
+	void			mousePressEvent(QMouseEvent *event);
+	void			mouseReleaseEvent(QMouseEvent *event);
 
 signals:
 	void			clicked(bool flag);

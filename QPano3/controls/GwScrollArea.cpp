@@ -8,6 +8,7 @@
 #include <QMimeData>
 #include <QMessageBox>
 
+
 GwScrollArea::GwScrollArea(QWidget *parent)
 	:QScrollArea(parent)
 {

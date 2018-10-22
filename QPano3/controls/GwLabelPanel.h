@@ -8,6 +8,7 @@
 #include <QMutex>
 
 #include <vector>
+#include "GwLabelBtn.h"
 
 class GwLabelPanel : public QLabel
 {
@@ -21,9 +22,13 @@ public:
 
 private:
 	QLabel*					getInsertImageLabel(QImage image);
+	GwLabelBtn*				getInsertImageGwLabelBtn(QImage image);
+	void					objInit();
 
+signals:
+	void					childLabelClicked(bool);
 protected slots:
-	void					childLabelClicked(QStringList imgs,int index);
+	//void					childLabelClicked();
 private:
 	const int				thisWidgetHeight = 180;
 	const int				childLabelWidth = 120;
@@ -39,7 +44,8 @@ private:
 
 	QStringList				mImageList;
 	std::vector<QLabel*>	mLabelList;
-
+	std::vector<GwLabelBtn*>
+							mGwLabelBtnList;
 	bool					eventFilter(QObject *watched, QEvent *event);
 };
 

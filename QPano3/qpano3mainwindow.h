@@ -19,8 +19,11 @@ public:
 private:
     Ui::QPano3MainWindow	*ui;
 
+	void					initConnect();
+
 private slots:
-	void			setInputFile();
+	void					setInputFile();
+	void					changeToTabPageSourceImage();
 
 };
 

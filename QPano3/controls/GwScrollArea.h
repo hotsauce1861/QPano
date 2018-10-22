@@ -1,9 +1,11 @@
 #ifndef GWSCROLLAREA_H
 #define GWSCROLLAREA_H
+
 #include <QScrollArea>
 #include <QObject>
 #include <QLabel>
 #include <QHBoxLayout>
+#include "GwLabelBtn.h"
 
 class GwScrollArea:public QScrollArea
 {

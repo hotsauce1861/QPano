@@ -54,7 +54,7 @@
     <ClCompile Include="controls\GwLabelPanel.cpp">
       <Filter>control</Filter>
     </ClCompile>
-    <ClCompile Include="controls\GwScrollArea.cpp">
+    <ClCompile Include="GwLabelBtn.cpp">
       <Filter>control</Filter>
     </ClCompile>
   </ItemGroup>
@@ -71,7 +71,7 @@
     <QtMoc Include="controls\GwLabelPanel.h">
       <Filter>control</Filter>
     </QtMoc>
-    <QtMoc Include="controls\GwScrollArea.h">
+    <QtMoc Include="GwLabelBtn.h">
       <Filter>control</Filter>
     </QtMoc>
   </ItemGroup>
