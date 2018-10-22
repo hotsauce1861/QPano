@@ -6,154 +6,287 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>652</width>
-    <height>445</height>
+    <width>839</width>
+    <height>627</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QHBoxLayout" name="horizontalLayout_2">
+   <layout class="QHBoxLayout" name="horizontalLayout_4">
     <item>
      <layout class="QGridLayout" name="gridLayout_4">
       <item row="0" column="0">
-       <widget class="QTabWidget" name="tabWidget">
+       <widget class="QTabWidget" name="tabWidgetSrcMain">
         <property name="currentIndex">
-         <number>0</number>
+         <number>2</number>
         </property>
         <widget class="QWidget" name="tabPageAssist">
          <attribute name="title">
           <string>项目助手</string>
          </attribute>
-         <layout class="QVBoxLayout" name="verticalLayout_2">
+         <layout class="QGridLayout" name="gridLayout">
+          <item row="0" column="1">
+           <spacer name="horizontalSpacer_2">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>579</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="5" column="0" alignment="Qt::AlignLeft|Qt::AlignVCenter">
+           <widget class="QPushButton" name="pushButtonStitchImg">
+            <property name="minimumSize">
+             <size>
+              <width>120</width>
+              <height>25</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>120</width>
+              <height>25</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>2.对准图像...</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0" alignment="Qt::AlignLeft|Qt::AlignVCenter">
+           <widget class="QPushButton" name="pushButtonInputImg">
+            <property name="minimumSize">
+             <size>
+              <width>120</width>
+              <height>25</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>120</width>
+              <height>25</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>1.加载图像...</string>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="1" colspan="3">
+           <spacer name="horizontalSpacer">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>666</width>
+              <height>22</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="6" column="0" alignment="Qt::AlignLeft|Qt::AlignVCenter">
+           <widget class="QPushButton" name="pushButtonOutputImg">
+            <property name="minimumSize">
+             <size>
+              <width>120</width>
+              <height>25</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>120</width>
+              <height>25</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>3.创建全景图...</string>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="1" colspan="3">
+           <spacer name="horizontalSpacer_3">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>666</width>
+              <height>22</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="7" column="0" colspan="4">
+           <spacer name="verticalSpacer_2">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>792</width>
+              <height>357</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="3" column="3">
+           <widget class="QToolButton" name="toolButtonSpinN">
+            <property name="text">
+             <string>...</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0" rowspan="3" colspan="2">
+           <layout class="QHBoxLayout" name="horizontalLayoutInputImgDock">
+            <property name="topMargin">
+             <number>5</number>
+            </property>
+            <item>
+             <widget class="GwLabelPanel" name="labelImagePanel">
+              <property name="text">
+               <string>拖拽图片到此</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="0" column="3">
+           <widget class="QPushButton" name="pushButtonAdvancedOpts">
+            <property name="text">
+             <string>高级 &gt;&gt;</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="0" colspan="4">
+           <widget class="QGroupBox" name="groupBoxCameraParam">
+            <property name="title">
+             <string>相机/镜头参数</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="3">
+           <widget class="QToolButton" name="toolButtonSpinP">
+            <property name="autoFillBackground">
+             <bool>true</bool>
+            </property>
+            <property name="text">
+             <string>...</string>
+            </property>
+            <property name="checkable">
+             <bool>false</bool>
+            </property>
+            <property name="autoRepeat">
+             <bool>false</bool>
+            </property>
+            <property name="autoRaise">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="tabPageSrcImg">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <attribute name="title">
+          <string>源图像</string>
+         </attribute>
+         <layout class="QVBoxLayout" name="verticalLayout">
           <item>
-           <layout class="QGridLayout" name="gridLayout">
-            <item row="8" column="0">
-             <widget class="QPushButton" name="pushButtonStitchImg">
-              <property name="text">
-               <string>2.对准图像...</string>
-              </property>
-             </widget>
-            </item>
-            <item row="5" column="3">
-             <spacer name="verticalSpacer">
-              <property name="orientation">
-               <enum>Qt::Vertical</enum>
-              </property>
-              <property name="sizeHint" stdset="0">
-               <size>
-                <width>20</width>
-                <height>40</height>
-               </size>
-              </property>
-             </spacer>
-            </item>
-            <item row="3" column="3">
-             <widget class="QToolButton" name="toolButtonSpinP">
-              <property name="autoFillBackground">
-               <bool>true</bool>
-              </property>
-              <property name="text">
-               <string>...</string>
-              </property>
-              <property name="checkable">
-               <bool>false</bool>
-              </property>
-              <property name="autoRepeat">
-               <bool>false</bool>
-              </property>
-              <property name="autoRaise">
-               <bool>false</bool>
-              </property>
-             </widget>
-            </item>
-            <item row="8" column="1" colspan="3">
-             <spacer name="horizontalSpacer_3">
-              <property name="orientation">
-               <enum>Qt::Horizontal</enum>
-              </property>
-              <property name="sizeHint" stdset="0">
-               <size>
-                <width>40</width>
-                <height>20</height>
-               </size>
-              </property>
-             </spacer>
-            </item>
-            <item row="9" column="1" colspan="3">
-             <spacer name="horizontalSpacer">
-              <property name="orientation">
-               <enum>Qt::Horizontal</enum>
-              </property>
-              <property name="sizeHint" stdset="0">
-               <size>
-                <width>40</width>
-                <height>20</height>
-               </size>
-              </property>
-             </spacer>
-            </item>
-            <item row="7" column="0" colspan="4">
-             <widget class="QGroupBox" name="groupBoxCameraParam">
-              <property name="title">
-               <string>相机/镜头参数</string>
-              </property>
-             </widget>
-            </item>
-            <item row="3" column="0" rowspan="3" colspan="3">
-             <layout class="QHBoxLayout" name="horizontalLayoutInputImgDock">
-              <property name="topMargin">
-               <number>5</number>
-              </property>
-              <item>
-               <widget class="GwLabelPanel" name="labelImagePanel">
-                <property name="text">
-                 <string>拖拽图片到此</string>
-                </property>
-                <property name="alignment">
-                 <set>Qt::AlignCenter</set>
-                </property>
-               </widget>
-              </item>
-             </layout>
-            </item>
-            <item row="10" column="0" colspan="4">
-             <spacer name="verticalSpacer_2">
-              <property name="orientation">
-               <enum>Qt::Vertical</enum>
-              </property>
-              <property name="sizeHint" stdset="0">
-               <size>
-                <width>20</width>
-                <height>40</height>
-               </size>
-              </property>
-             </spacer>
-            </item>
-            <item row="4" column="3">
-             <widget class="QToolButton" name="toolButtonSpinN">
+           <widget class="QLabel" name="labelSrcTabpage">
+            <property name="text">
+             <string>点击以下添加按钮为您的全景图选择图像。您也能够从资源管理器拖动文件到该窗口。</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="Line" name="lineSrcTabpage">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QTableWidget" name="tableWidgetSrcImage"/>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_2">
+            <item>
+             <widget class="QToolButton" name="toolButton_6">
               <property name="text">
                <string>...</string>
               </property>
              </widget>
             </item>
-            <item row="1" column="0">
-             <widget class="QPushButton" name="pushButtonInputImg">
+            <item>
+             <widget class="QToolButton" name="toolButton_8">
               <property name="text">
-               <string>1.加载图像...</string>
+               <string>...</string>
               </property>
              </widget>
             </item>
-            <item row="9" column="0">
-             <widget class="QPushButton" name="pushButtonOutputImg">
+            <item>
+             <widget class="QToolButton" name="toolButton_7">
               <property name="text">
-               <string>3.创建全景图...</string>
+               <string>...</string>
               </property>
              </widget>
             </item>
-            <item row="1" column="1">
-             <spacer name="horizontalSpacer_2">
+            <item>
+             <widget class="Line" name="line_3">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QToolButton" name="toolButton_5">
+              <property name="text">
+               <string>...</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QToolButton" name="toolButton_9">
+              <property name="text">
+               <string>...</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="Line" name="line_4">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QToolButton" name="toolButton_4">
+              <property name="text">
+               <string>...</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QToolButton" name="toolButton_10">
+              <property name="text">
+               <string>...</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_5">
               <property name="orientation">
                <enum>Qt::Horizontal</enum>
               </property>
@@ -164,13 +297,6 @@
                </size>
               </property>
              </spacer>
-            </item>
-            <item row="1" column="2" colspan="2">
-             <widget class="QPushButton" name="pushButtonAdvancedOpts">
-              <property name="text">
-               <string>高级 &gt;&gt;</string>
-              </property>
-             </widget>
             </item>
            </layout>
           </item>
@@ -180,201 +306,140 @@
          <attribute name="title">
           <string>剪裁</string>
          </attribute>
-         <layout class="QGridLayout" name="gridLayout_5">
-          <item row="0" column="0">
-           <layout class="QVBoxLayout" name="verticalLayout_3">
+         <layout class="QGridLayout" name="gridLayout_2">
+          <item row="2" column="1">
+           <widget class="QLabel" name="label_6">
+            <property name="text">
+             <string>剪裁</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1">
+           <widget class="QLabel" name="label_5">
+            <property name="text">
+             <string>左：</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0" rowspan="13">
+           <widget class="QTabWidget" name="tabWidgetEditImage">
+            <property name="currentIndex">
+             <number>-1</number>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="1">
+           <widget class="QLabel" name="label_2">
+            <property name="text">
+             <string>右：</string>
+            </property>
+           </widget>
+          </item>
+          <item row="11" column="1" colspan="2">
+           <widget class="QPushButton" name="pushButton">
+            <property name="text">
+             <string>不剪裁</string>
+            </property>
+           </widget>
+          </item>
+          <item row="9" column="1">
+           <widget class="QLabel" name="label_7">
+            <property name="text">
+             <string>高度：</string>
+            </property>
+           </widget>
+          </item>
+          <item row="13" column="1">
+           <widget class="QLabel" name="label_9">
+            <property name="text">
+             <string>缩放：</string>
+            </property>
+           </widget>
+          </item>
+          <item row="8" column="1">
+           <widget class="QLabel" name="label_8">
+            <property name="text">
+             <string>宽度：</string>
+            </property>
+           </widget>
+          </item>
+          <item row="13" column="2">
+           <widget class="QComboBox" name="comboBox"/>
+          </item>
+          <item row="14" column="1" colspan="2">
+           <layout class="QHBoxLayout" name="horizontalLayout">
             <item>
-             <widget class="QLabel" name="label">
-              <property name="minimumSize">
-               <size>
-                <width>20</width>
-                <height>20</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>16777215</width>
-                <height>20</height>
-               </size>
-              </property>
+             <widget class="QToolButton" name="toolButton">
               <property name="text">
-               <string>如果您的图像需要剪裁，可以在下面操作。剪裁不会改变原始图像文件。</string>
+               <string>...</string>
               </property>
              </widget>
             </item>
             <item>
-             <widget class="Line" name="line">
-              <property name="orientation">
-               <enum>Qt::Horizontal</enum>
+             <widget class="QToolButton" name="toolButton_2">
+              <property name="text">
+               <string>...</string>
               </property>
              </widget>
             </item>
             <item>
-             <layout class="QGridLayout" name="gridLayout_3" columnstretch="0,0,0,0">
-              <item row="0" column="0" rowspan="12">
-               <widget class="QTabWidget" name="tabWidget_2">
-                <property name="currentIndex">
-                 <number>0</number>
-                </property>
-                <widget class="QWidget" name="tab_4">
-                 <attribute name="title">
-                  <string>Tab 1</string>
-                 </attribute>
-                 <widget class="GwLabel" name="label_10">
-                  <property name="geometry">
-                   <rect>
-                    <x>0</x>
-                    <y>0</y>
-                    <width>461</width>
-                    <height>241</height>
-                   </rect>
-                  </property>
-                  <property name="text">
-                   <string/>
-                  </property>
-                 </widget>
-                </widget>
-                <widget class="QWidget" name="tab_5">
-                 <attribute name="title">
-                  <string>Tab 2</string>
-                 </attribute>
-                </widget>
-               </widget>
-              </item>
-              <item row="5" column="1">
-               <widget class="QLabel" name="label_8">
-                <property name="text">
-                 <string>宽度：</string>
-                </property>
-               </widget>
-              </item>
-              <item row="6" column="1">
-               <widget class="QLabel" name="label_7">
-                <property name="text">
-                 <string>高度：</string>
-                </property>
-               </widget>
-              </item>
-              <item row="9" column="1" colspan="3">
-               <spacer name="verticalSpacer_3">
-                <property name="orientation">
-                 <enum>Qt::Vertical</enum>
-                </property>
-                <property name="sizeHint" stdset="0">
-                 <size>
-                  <width>20</width>
-                  <height>40</height>
-                 </size>
-                </property>
-               </spacer>
-              </item>
-              <item row="12" column="0" colspan="3">
-               <spacer name="horizontalSpacer_4">
-                <property name="orientation">
-                 <enum>Qt::Horizontal</enum>
-                </property>
-                <property name="sizeHint" stdset="0">
-                 <size>
-                  <width>40</width>
-                  <height>20</height>
-                 </size>
-                </property>
-               </spacer>
-              </item>
-              <item row="8" column="1" colspan="3">
-               <widget class="QPushButton" name="pushButton">
-                <property name="text">
-                 <string>不剪裁</string>
-                </property>
-               </widget>
-              </item>
-              <item row="11" column="1" colspan="3">
-               <layout class="QHBoxLayout" name="horizontalLayout">
-                <item>
-                 <widget class="QToolButton" name="toolButton">
-                  <property name="text">
-                   <string>...</string>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QToolButton" name="toolButton_2">
-                  <property name="text">
-                   <string>...</string>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QToolButton" name="toolButton_3">
-                  <property name="text">
-                   <string>...</string>
-                  </property>
-                 </widget>
-                </item>
-               </layout>
-              </item>
-              <item row="0" column="1">
-               <widget class="QLabel" name="label_6">
-                <property name="text">
-                 <string>剪裁</string>
-                </property>
-               </widget>
-              </item>
-              <item row="10" column="2" colspan="2">
-               <widget class="QComboBox" name="comboBox"/>
-              </item>
-              <item row="1" column="1">
-               <widget class="QLabel" name="label_5">
-                <property name="text">
-                 <string>左：</string>
-                </property>
-               </widget>
-              </item>
-              <item row="7" column="1" colspan="3">
-               <widget class="QCheckBox" name="checkBox">
-                <property name="text">
-                 <string>个别剪裁</string>
-                </property>
-               </widget>
-              </item>
-              <item row="3" column="1">
-               <widget class="QLabel" name="label_3">
-                <property name="text">
-                 <string>上：</string>
-                </property>
-               </widget>
-              </item>
-              <item row="10" column="1">
-               <widget class="QLabel" name="label_9">
-                <property name="text">
-                 <string>缩放：</string>
-                </property>
-               </widget>
-              </item>
-              <item row="2" column="1">
-               <widget class="QLabel" name="label_2">
-                <property name="text">
-                 <string>右：</string>
-                </property>
-               </widget>
-              </item>
-              <item row="4" column="1">
-               <widget class="QLabel" name="label_4">
-                <property name="text">
-                 <string>下：</string>
-                </property>
-               </widget>
-              </item>
-             </layout>
+             <widget class="QToolButton" name="toolButton_3">
+              <property name="text">
+               <string>...</string>
+              </property>
+             </widget>
             </item>
            </layout>
           </item>
+          <item row="10" column="1" colspan="2">
+           <widget class="QCheckBox" name="checkBox">
+            <property name="text">
+             <string>个别剪裁</string>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="1">
+           <widget class="QLabel" name="label_3">
+            <property name="text">
+             <string>上：</string>
+            </property>
+           </widget>
+          </item>
+          <item row="12" column="1" colspan="2">
+           <spacer name="verticalSpacer_3">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>122</width>
+              <height>260</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="7" column="1">
+           <widget class="QLabel" name="label_4">
+            <property name="text">
+             <string>下：</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <widget class="QLabel" name="label">
+            <property name="text">
+             <string>如果您的图像需要剪裁，可以在下面操作。剪裁不会改变原始图像文件。</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0" colspan="3">
+           <widget class="Line" name="line">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
          </layout>
-        </widget>
-        <widget class="QWidget" name="tabPageSrcImg">
-         <attribute name="title">
-          <string>源图像</string>
-         </attribute>
         </widget>
        </widget>
       </item>
@@ -387,7 +452,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>652</width>
+     <width>839</width>
      <height>23</height>
     </rect>
    </property>
@@ -395,11 +460,6 @@
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <customwidgets>
-  <customwidget>
-   <class>GwLabel</class>
-   <extends>QLabel</extends>
-   <header>GwLabel.h</header>
-  </customwidget>
   <customwidget>
    <class>GwLabelPanel</class>
    <extends>QLabel</extends>
