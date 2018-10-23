@@ -49,7 +49,6 @@ public:
     QAction *actionZoomIn;
     QAction *actionZoomOut;
     QAction *actionHelp;
-    QAction *actionN;
     QWidget *centralwidget;
     QHBoxLayout *horizontalLayout_4;
     QGridLayout *gridLayout_4;
@@ -200,8 +199,6 @@ public:
         QIcon icon8;
         icon8.addFile(QStringLiteral(":/solid-icons/Resources/fontawesome-free-5.3.1-desktop/svgs/solid/book.svg"), QSize(), QIcon::Normal, QIcon::On);
         actionHelp->setIcon(icon8);
-        actionN = new QAction(QPano3MainWindow);
-        actionN->setObjectName(QStringLiteral("actionN"));
         centralwidget = new QWidget(QPano3MainWindow);
         centralwidget->setObjectName(QStringLiteral("centralwidget"));
         horizontalLayout_4 = new QHBoxLayout(centralwidget);
@@ -685,7 +682,6 @@ public:
         menubar->addAction(menu_T->menuAction());
         menubar->addAction(menu_P->menuAction());
         menubar->addAction(menu_H->menuAction());
-        menu_F->addAction(actionN);
         toolBar->addAction(actionNewProject);
         toolBar->addAction(actionOpenProject);
         toolBar->addAction(actionSaveProject);
@@ -749,7 +745,6 @@ public:
 #ifndef QT_NO_TOOLTIP
         actionHelp->setToolTip(QApplication::translate("QPano3MainWindow", "\345\270\256\345\212\251", nullptr));
 #endif // QT_NO_TOOLTIP
-        actionN->setText(QApplication::translate("QPano3MainWindow", "New Project", nullptr));
         groupBoxCameraParam->setTitle(QApplication::translate("QPano3MainWindow", "\347\233\270\346\234\272/\351\225\234\345\244\264\345\217\202\346\225\260", nullptr));
         pushButtonStitchImg->setText(QApplication::translate("QPano3MainWindow", "2.\345\257\271\345\207\206\345\233\276\345\203\217...", nullptr));
         pushButtonInputImg->setText(QApplication::translate("QPano3MainWindow", "1.\345\212\240\350\275\275\345\233\276\345\203\217...", nullptr));

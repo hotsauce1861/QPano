@@ -31,6 +31,11 @@ void QPano3MainWindow::changeToTabPageSourceImage()
 	
 }
 
+void QPano3MainWindow::resizeEvent(QResizeEvent * event)
+{
+
+}
+
 
 void QPano3MainWindow::setInputFile() {
 
@@ -44,21 +49,26 @@ void QPano3MainWindow::setInputFile() {
 
 	for (int i = 0; i<filename.size();i++){
 		QWidget *tmpWidget = new QWidget(this);
+		QPushButton *tmpBtn = new QPushButton(this);
 		QHBoxLayout *tmpLayout = new QHBoxLayout;
 		GwLabel *tmpGwLabel = new GwLabel(this);
-		tmpWidget->setLayout(tmpLayout);
-		//tmpGwLabel->setScaledContents(true);
+		tmpBtn->setText("Test");
+		tmpLayout->setAlignment(Qt::AlignLeft);
+		tmpLayout->setSizeConstraint(QHBoxLayout::SetDefaultConstraint);
+		//tmpLayout->setSizeConstraint(QHBoxLayout::SetMinAndMaxSize);
 		tmpGwLabel->setBackgroundRole(QPalette::ColorRole::Dark);
+		tmpGwLabel->setFrameShape(QFrame::Shape::StyledPanel);
 		tmpGwLabel->setPixmap(QPixmap::fromImage(QImage(filename[i])
 			.scaled(
 				this->width(),
 				this->height(),
 				Qt::KeepAspectRatio, Qt::SmoothTransformation)));
-
+		
 		
 		tmpLayout->addWidget(tmpGwLabel);
-		ui->tabWidgetEditImage->setLayout(tmpLayout);
-		ui->tabWidgetEditImage->addTab(tmpGwLabel, "1");
+		tmpLayout->addWidget(tmpBtn);
+		tmpWidget->setLayout(tmpLayout);
+		ui->tabWidgetEditImage->addTab(tmpWidget, "1");
 	}
 
 }

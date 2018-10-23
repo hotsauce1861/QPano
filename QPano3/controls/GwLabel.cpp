@@ -1,4 +1,5 @@
 #include "GwLabel.h"
+#include <QMessageBox>
 
 GwLabel::GwLabel(QWidget *parent)
 	: QLabel(parent)
@@ -17,6 +18,24 @@ GwLabel::GwLabel(QWidget *parent)
 	}
 //	mHeightRatio = (float)(this->height() / this->pixmap()->height());
 //	mWidthRatio = (float)(this->width() / this->pixmap()->width());
+}
+
+GwLabel::GwLabel()
+{
+	eState = IDLE;
+	state = 0;
+	mEdgeWidth = 10;
+	mMouseLeftPressed = false;
+	mCircleRadius = DEFAULE_RADIUS;
+
+	if (this->width() > this->height()) {
+		mCircleCoord = new QPoint(this->height() / 2, this->height() / 2);
+	}
+	else {
+		mCircleCoord = new QPoint(this->width() / 2, this->width() / 2);
+	}
+	//	mHeightRatio = (float)(this->height() / this->pixmap()->height());
+	//	mWidthRatio = (float)(this->width() / this->pixmap()->width());
 }
 
 GwLabel::~GwLabel()
@@ -151,8 +170,9 @@ void GwLabel::mouseReleaseEvent(QMouseEvent *event)
 	emit clicked(true);
 }
 
-void GwLabel::resize(QShowEvent * event)
+void GwLabel::resizeEvent(QResizeEvent * event)
 {
-	
+	QLabel::resizeEvent(event);	
 }
+
 

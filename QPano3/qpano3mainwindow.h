@@ -25,6 +25,9 @@ private slots:
 	void					setInputFile();
 	void					changeToTabPageSourceImage();
 
+protected:
+	void					resizeEvent(QResizeEvent *event);
+
 };
 
 #endif // QPANO3MAINWINDOW_H

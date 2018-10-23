@@ -13,6 +13,7 @@ class GwLabel : public QLabel
 	Q_OBJECT
 public:
 	GwLabel(QWidget *parent);
+	GwLabel();
 	~GwLabel();
 
 private:
@@ -43,7 +44,7 @@ private:
 	void			mouseMoveEvent(QMouseEvent *event);
 	void			mousePressEvent(QMouseEvent *event);
 	void			mouseReleaseEvent(QMouseEvent *event);
-	void			resize(QShowEvent *event);
+	void			resizeEvent(QResizeEvent *event);
 signals:
 	void			clicked(bool flag);
 
