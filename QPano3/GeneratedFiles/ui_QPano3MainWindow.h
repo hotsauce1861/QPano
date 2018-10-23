@@ -23,6 +23,7 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
+#include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpacerItem>
@@ -48,6 +49,7 @@ public:
     QAction *actionZoomIn;
     QAction *actionZoomOut;
     QAction *actionHelp;
+    QAction *actionN;
     QWidget *centralwidget;
     QHBoxLayout *horizontalLayout_4;
     QGridLayout *gridLayout_4;
@@ -137,6 +139,13 @@ public:
     QPushButton *pushButton_4;
     QLabel *label_16;
     QMenuBar *menubar;
+    QMenu *menu_F;
+    QMenu *menu_E;
+    QMenu *menu_V;
+    QMenu *menu_I;
+    QMenu *menu_T;
+    QMenu *menu_P;
+    QMenu *menu_H;
     QStatusBar *statusbar;
     QToolBar *toolBar;
 
@@ -191,6 +200,8 @@ public:
         QIcon icon8;
         icon8.addFile(QStringLiteral(":/solid-icons/Resources/fontawesome-free-5.3.1-desktop/svgs/solid/book.svg"), QSize(), QIcon::Normal, QIcon::On);
         actionHelp->setIcon(icon8);
+        actionN = new QAction(QPano3MainWindow);
+        actionN->setObjectName(QStringLiteral("actionN"));
         centralwidget = new QWidget(QPano3MainWindow);
         centralwidget->setObjectName(QStringLiteral("centralwidget"));
         horizontalLayout_4 = new QHBoxLayout(centralwidget);
@@ -641,6 +652,20 @@ public:
         menubar = new QMenuBar(QPano3MainWindow);
         menubar->setObjectName(QStringLiteral("menubar"));
         menubar->setGeometry(QRect(0, 0, 842, 23));
+        menu_F = new QMenu(menubar);
+        menu_F->setObjectName(QStringLiteral("menu_F"));
+        menu_E = new QMenu(menubar);
+        menu_E->setObjectName(QStringLiteral("menu_E"));
+        menu_V = new QMenu(menubar);
+        menu_V->setObjectName(QStringLiteral("menu_V"));
+        menu_I = new QMenu(menubar);
+        menu_I->setObjectName(QStringLiteral("menu_I"));
+        menu_T = new QMenu(menubar);
+        menu_T->setObjectName(QStringLiteral("menu_T"));
+        menu_P = new QMenu(menubar);
+        menu_P->setObjectName(QStringLiteral("menu_P"));
+        menu_H = new QMenu(menubar);
+        menu_H->setObjectName(QStringLiteral("menu_H"));
         QPano3MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(QPano3MainWindow);
         statusbar->setObjectName(QStringLiteral("statusbar"));
@@ -653,15 +678,27 @@ public:
         toolBar->setFloatable(false);
         QPano3MainWindow->addToolBar(Qt::TopToolBarArea, toolBar);
 
+        menubar->addAction(menu_F->menuAction());
+        menubar->addAction(menu_E->menuAction());
+        menubar->addAction(menu_V->menuAction());
+        menubar->addAction(menu_I->menuAction());
+        menubar->addAction(menu_T->menuAction());
+        menubar->addAction(menu_P->menuAction());
+        menubar->addAction(menu_H->menuAction());
+        menu_F->addAction(actionN);
         toolBar->addAction(actionNewProject);
         toolBar->addAction(actionOpenProject);
         toolBar->addAction(actionSaveProject);
+        toolBar->addSeparator();
         toolBar->addAction(actionUndo);
         toolBar->addAction(actionRedo);
+        toolBar->addSeparator();
         toolBar->addAction(actionOption);
+        toolBar->addSeparator();
         toolBar->addAction(actionZoomIn);
         toolBar->addAction(actionZoomOut);
         toolBar->addAction(actionHelp);
+        toolBar->addSeparator();
 
         retranslateUi(QPano3MainWindow);
         QObject::connect(pushButtonInputImg, SIGNAL(clicked(bool)), QPano3MainWindow, SLOT(setInputFile()));
@@ -712,6 +749,7 @@ public:
 #ifndef QT_NO_TOOLTIP
         actionHelp->setToolTip(QApplication::translate("QPano3MainWindow", "\345\270\256\345\212\251", nullptr));
 #endif // QT_NO_TOOLTIP
+        actionN->setText(QApplication::translate("QPano3MainWindow", "New Project", nullptr));
         groupBoxCameraParam->setTitle(QApplication::translate("QPano3MainWindow", "\347\233\270\346\234\272/\351\225\234\345\244\264\345\217\202\346\225\260", nullptr));
         pushButtonStitchImg->setText(QApplication::translate("QPano3MainWindow", "2.\345\257\271\345\207\206\345\233\276\345\203\217...", nullptr));
         pushButtonInputImg->setText(QApplication::translate("QPano3MainWindow", "1.\345\212\240\350\275\275\345\233\276\345\203\217...", nullptr));
@@ -765,6 +803,13 @@ public:
         pushButton_4->setText(QApplication::translate("QPano3MainWindow", "\350\256\276\347\275\256", nullptr));
         label_16->setText(QApplication::translate("QPano3MainWindow", "\345\223\201\350\264\250\357\274\232100%", nullptr));
         tabWidgetSrcMain->setTabText(tabWidgetSrcMain->indexOf(tabPageSvaePano), QApplication::translate("QPano3MainWindow", "\345\210\233\345\273\272\345\205\250\346\231\257\345\233\276", nullptr));
+        menu_F->setTitle(QApplication::translate("QPano3MainWindow", "\346\226\207\344\273\266(F)", nullptr));
+        menu_E->setTitle(QApplication::translate("QPano3MainWindow", "\347\274\226\350\276\221(E)", nullptr));
+        menu_V->setTitle(QApplication::translate("QPano3MainWindow", "\350\247\206\345\233\276(V)", nullptr));
+        menu_I->setTitle(QApplication::translate("QPano3MainWindow", "\345\233\276\345\203\217(I)", nullptr));
+        menu_T->setTitle(QApplication::translate("QPano3MainWindow", "\345\267\245\345\205\267(T)", nullptr));
+        menu_P->setTitle(QApplication::translate("QPano3MainWindow", "\351\241\271\347\233\256(P)", nullptr));
+        menu_H->setTitle(QApplication::translate("QPano3MainWindow", "\345\270\256\345\212\251(H)", nullptr));
         toolBar->setWindowTitle(QApplication::translate("QPano3MainWindow", "toolBar", nullptr));
     } // retranslateUi
 

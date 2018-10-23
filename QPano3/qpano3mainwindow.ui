@@ -738,6 +738,48 @@
      <height>23</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menu_F">
+    <property name="title">
+     <string>文件(F)</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menu_E">
+    <property name="title">
+     <string>编辑(E)</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menu_V">
+    <property name="title">
+     <string>视图(V)</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menu_I">
+    <property name="title">
+     <string>图像(I)</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menu_T">
+    <property name="title">
+     <string>工具(T)</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menu_P">
+    <property name="title">
+     <string>项目(P)</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menu_H">
+    <property name="title">
+     <string>帮助(H)</string>
+    </property>
+   </widget>
+   <addaction name="menu_F"/>
+   <addaction name="menu_E"/>
+   <addaction name="menu_V"/>
+   <addaction name="menu_I"/>
+   <addaction name="menu_T"/>
+   <addaction name="menu_P"/>
+   <addaction name="menu_H"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <widget class="QToolBar" name="toolBar">
@@ -768,12 +810,16 @@
    <addaction name="actionNewProject"/>
    <addaction name="actionOpenProject"/>
    <addaction name="actionSaveProject"/>
+   <addaction name="separator"/>
    <addaction name="actionUndo"/>
    <addaction name="actionRedo"/>
+   <addaction name="separator"/>
    <addaction name="actionOption"/>
+   <addaction name="separator"/>
    <addaction name="actionZoomIn"/>
    <addaction name="actionZoomOut"/>
    <addaction name="actionHelp"/>
+   <addaction name="separator"/>
   </widget>
   <action name="actionNewProject">
    <property name="icon">
