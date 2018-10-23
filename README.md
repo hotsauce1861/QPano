@@ -1,10 +1,13 @@
 # QPano
 QPano is a opensource tool based on Qt and Opencv. It can help you to edit your picture with less effort.
 
-### required
-Visual Studio 2017
-Qt 5.11
-OpenCV 3.4.2
+### Required
+
+#### Windows
+
+- Visual Studio 2017
+- Qt 5.11
+- OpenCV 3.4.2
 
 ### How To Contribute
 
