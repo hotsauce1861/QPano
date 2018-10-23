@@ -38,8 +38,8 @@ void GwLabelPanel::objInit()
 	this->setStyleSheet(
 		"QScrollArea{"
 		"font-size:20px;"
-		"border:2px dashed gray;"
-		"border-radius:10px;"
+		"border:1px dashed gray;"
+		"border-radius:5px;"
 		"background:rgba(25,25,25,25);"
 		"}");
 	mHBoxMainLayout->setAlignment(Qt::AlignLeft);

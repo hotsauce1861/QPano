@@ -8,7 +8,13 @@ GwLabel::GwLabel(QWidget *parent)
 	mEdgeWidth = 10;
 	mMouseLeftPressed = false;
 	mCircleRadius = DEFAULE_RADIUS;
-	mCircleCoord = new QPoint(this->width() / 2, this->height() / 2);
+
+	if (this->width() > this->height()) {
+		mCircleCoord = new QPoint(this->height() / 2, this->height() / 2);
+	}
+	else {
+		mCircleCoord = new QPoint(this->width() / 2, this->width() / 2);
+	}
 //	mHeightRatio = (float)(this->height() / this->pixmap()->height());
 //	mWidthRatio = (float)(this->width() / this->pixmap()->width());
 }
@@ -68,7 +74,12 @@ void GwLabel::paintEvent(QPaintEvent *event)
 
 void GwLabel::showEvent(QShowEvent * event)
 {
-	mCircleCoord = new QPoint(this->width() / 2, this->height() / 2);
+	if (this->width() > this->height()) {
+		mCircleCoord = new QPoint(this->height() / 2, this->height() / 2);
+	}
+	else {
+		mCircleCoord = new QPoint(this->width() / 2, this->width() / 2);
+	}
 }
 
 
@@ -138,5 +149,10 @@ void GwLabel::mouseReleaseEvent(QMouseEvent *event)
 {
  	this->mMouseLeftPressed = false;
 	emit clicked(true);
+}
+
+void GwLabel::resize(QShowEvent * event)
+{
+	
 }
 
