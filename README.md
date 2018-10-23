@@ -1,4 +1,4 @@
-# QPano ![](/QPano3/Resources/bt428.svg) ![](/QPano3/Resources/plug.svg)
+# QPano ![](./QPano3/Resources/bt428.svg) ![](./QPano3/Resources/plug.svg)
 
 QPano is a opensource tool based on Qt and Opencv. It can help you to edit your picture with less effort.
 
