@@ -1,4 +1,5 @@
-# QPano ![TeamCity CodeBetter](https://img.shields.io/teamcity/codebetter/bt428.svg) ![](https://img.shields.io/hexpm/l/plug.svg)
+# QPano ![](/QPano3/Resources/bt428.svg) ![](/QPano3/Resources/plug.svg)
+
 QPano is a opensource tool based on Qt and Opencv. It can help you to edit your picture with less effort.
 
 ### Required
