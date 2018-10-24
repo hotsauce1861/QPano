@@ -16,6 +16,6 @@ int main(int argc, char *argv[])
 // 		qApp->setStyleSheet(qss);
 // 	}	
 	w2.show();
-//	w.show();
+//	w.show(); //w是鱼眼展开的测试程序主窗口
 	return a.exec();
 }

@@ -64,4 +64,13 @@ ImageUnit & ImageUnit::setGwLabelBtn(GwLabelBtn * vGwLabelBtn)
 	mGwLabelBtn = vGwLabelBtn;
 	return *this;
 }
+ImageUnit & ImageUnit::setQImage(QImage vQImage)
+{
+	this->mImage = vQImage;
+	return *this;
+}
+QImage & ImageUnit::getQImage()
+{
+	return mImage;
+}
 #endif

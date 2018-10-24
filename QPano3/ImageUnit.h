@@ -32,6 +32,10 @@ public:
 	GwLabelBtn	getGwLabelBtn();
 	ImageUnit&	setGwLabelBtn(GwLabelBtn* vGwLabelBtn);
 
+
+	ImageUnit&	setQImage(QImage vQImage);
+	QImage&		getQImage();
+
 private:
 #ifdef USE_GWLABEL
 	GwLabel			*mGwLabel;

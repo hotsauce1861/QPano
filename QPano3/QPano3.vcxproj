@@ -127,6 +127,7 @@
     <ClCompile Include="fisheye.cpp" />
     <ClCompile Include="fishstitch.cpp" />
     <ClCompile Include="GwLabelBtn.cpp" />
+    <ClCompile Include="GwTableWidget.cpp" />
     <ClCompile Include="ImageUnit.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="QPano3.cpp" />
@@ -146,6 +147,7 @@
     <QtRcc Include="QPano3.qrc" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="GwTableWidget.h" />
     <ClInclude Include="ImageUnit.h" />
     <QtMoc Include="GwLabelBtn.h">
       <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName)\.;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets</IncludePath>

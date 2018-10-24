@@ -56,22 +56,29 @@ void QPano3MainWindow::setInputFile() {
 
 	}
 
+	//设置表头内容
 
 	ui->tableWidgetSrcImage->setColumnCount(4);
 	ui->tableWidgetSrcImage->setRowCount(tmpList.size());
+
+	QStringList header;
+	header << tr(u8"图片") << tr(u8"宽度") << tr(u8"高度") << tr(u8"路径");
+	ui->tableWidgetSrcImage->setHorizontalHeaderLabels(header);
+
 	for (int i = 0; i < tmpList.size(); i++) {
 
 		QTableWidgetItem *itemLableImg = new QTableWidgetItem();
 		QTableWidgetItem *itemWidth = new QTableWidgetItem();
 		QTableWidgetItem *itemHeight = new QTableWidgetItem();
 		QTableWidgetItem *itemPath = new QTableWidgetItem();
-
-		itemLableImg->setIcon(QIcon(tmpList[i]->getImgPath()));
-		itemWidth->setText(QString::number(tmpList[i]->getLabel().width(), 10));
-		itemHeight->setText(QString::number(tmpList[i]->getLabel().height(), 10));
+		ui->tableWidgetSrcImage->setRowHeight(i, tmpList[i]->getGwLabel().height());
+		ui->tableWidgetSrcImage->setColumnWidth(0, tmpList[i]->getGwLabel().width() + 50);
+		ui->tableWidgetSrcImage->setColumnWidth(3, 450 );
+		itemWidth->setText(QString::number(tmpList[i]->getQImage().width(), 10));
+		itemHeight->setText(QString::number(tmpList[i]->getQImage().height(), 10));
 		itemPath->setText(tmpList[i]->getImgPath());
 
-		ui->tableWidgetSrcImage->setItem(i, 0, itemLableImg);
+		ui->tableWidgetSrcImage->setCellWidget(i, 0, &(tmpList[i]->getGwLabel()));
 		ui->tableWidgetSrcImage->setItem(i, 1, itemWidth);
 		ui->tableWidgetSrcImage->setItem(i, 2, itemHeight);
 		ui->tableWidgetSrcImage->setItem(i, 3, itemPath);

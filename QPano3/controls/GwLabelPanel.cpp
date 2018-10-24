@@ -125,6 +125,7 @@ void GwLabelPanel::update()
 		tmpLabelBtn = getInsertImageGwLabelBtn(tmpImg);
 		tmpLabel = getInsertImageGwLabel(tmpImg);
 		//添加ImageUnit到列表中
+		tmpUnit->setQImage(tmpImg);
 		tmpUnit->setGwLabel(tmpLabel);
 		tmpUnit->setGwLabelBtn(tmpLabelBtn);
 		tmpUnit->setImgPath(mImageList[i]);
