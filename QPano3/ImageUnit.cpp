@@ -17,9 +17,9 @@ QLabel & ImageUnit::getLabel()
 	return *mLabel;
 }
 
-ImageUnit & ImageUnit::setLabel(QLabel& vLabel)
+ImageUnit & ImageUnit::setLabel(QLabel* vLabel)
 {
-	mLabel = &vLabel;
+	mLabel = vLabel;
 	return *this;
 }
 
@@ -45,14 +45,23 @@ ImageUnit & ImageUnit::setImgIndex(int vIndex)
 	return *this;
 }
 #ifdef USE_GWLABEL
-GwLabel ImageUnit::getGwLabel()
+GwLabel& ImageUnit::getGwLabel()
 {
-	return mGwLabel;
+	return *mGwLabel;
 }
 
-ImageUnit & ImageUnit::setGwLabel(GwLabel& vGwLabel)
+ImageUnit & ImageUnit::setGwLabel(GwLabel* vGwLabel)
 {	
-	this->mGwLabel = &vGwLabel;
+	this->mGwLabel = vGwLabel;
+	return *this;
+}
+GwLabelBtn ImageUnit::getGwLabelBtn()
+{
+	return mGwLabelBtn;
+}
+ImageUnit & ImageUnit::setGwLabelBtn(GwLabelBtn * vGwLabelBtn)
+{
+	mGwLabelBtn = vGwLabelBtn;
 	return *this;
 }
 #endif

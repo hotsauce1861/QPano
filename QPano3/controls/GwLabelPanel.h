@@ -10,6 +10,10 @@
 #include <vector>
 #include "GwLabelBtn.h"
 
+#include "ImageUnit.h"
+
+
+
 class GwLabelPanel : public QLabel
 {
 	Q_OBJECT
@@ -19,10 +23,12 @@ public:
 	~GwLabelPanel();
 	void					setInputImagesList(QStringList imgs);
 	void					update();
-
+	std::vector<ImageUnit*>&
+							getImageListObj();
 private:
 	QLabel*					getInsertImageLabel(QImage image);
 	GwLabelBtn*				getInsertImageGwLabelBtn(QImage image);
+	GwLabel *			getInsertImageGwLabel(QImage image);
 	void					objInit();
 
 signals:
@@ -46,6 +52,7 @@ private:
 	std::vector<QLabel*>	mLabelList;
 	std::vector<GwLabelBtn*>
 							mGwLabelBtnList;
+	std::vector<ImageUnit*> *mImageUnitList;
 	bool					eventFilter(QObject *watched, QEvent *event);
 };
 

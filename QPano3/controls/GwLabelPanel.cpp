@@ -23,6 +23,8 @@ GwLabelPanel::~GwLabelPanel()
 void GwLabelPanel::objInit()
 {
 	this->setText("");
+	mImageUnitList = new std::vector<ImageUnit *>();
+
 	mHBoxMainLayout = new QHBoxLayout(this);
 	mMotherMainLayout = new QHBoxLayout(this);
 	mWidget = new QWidget(this);
@@ -52,6 +54,11 @@ void GwLabelPanel::objInit()
 
 	mMotherMainLayout->addWidget(mScrollArea);
 	this->setLayout(mMotherMainLayout);
+}
+
+std::vector<ImageUnit*>& GwLabelPanel::getImageListObj()
+{
+	return *mImageUnitList;
 }
 
 
@@ -107,24 +114,48 @@ void GwLabelPanel::setInputImagesList(QStringList imgs)
 
 void GwLabelPanel::update()
 {	
-	while (mImageList.size()){
-		//QLabel *tmpLabel = new QLabel;
-		GwLabelBtn *tmpLabel = new GwLabelBtn(this);
-		QImage tmpImg(mImageList.front());
-		mImageList.pop_front();
+	int count = mImageUnitList->size();
+	//while (mImageList.size())
+	for(int i = 0;i<mImageList.size();i++)
+	{
+		ImageUnit *tmpUnit = new ImageUnit;
+		GwLabel *tmpLabel = new GwLabel(this);
+		GwLabelBtn *tmpLabelBtn = new GwLabelBtn(this);
+		QImage tmpImg(mImageList[i]);
 		//tmpLabel = getInsertImageLabel(tmpImg);
-		tmpLabel = getInsertImageGwLabelBtn(tmpImg);
-		
-		this->mLabelList.push_back(tmpLabel);
+		tmpLabelBtn = getInsertImageGwLabelBtn(tmpImg);
+		tmpLabel = getInsertImageGwLabel(tmpImg);
 
-		this->mHBoxMainLayout->addWidget(tmpLabel);
-		connect(tmpLabel, SIGNAL(clicked(bool)), this, SIGNAL(childLabelClicked(bool)));
+		tmpUnit->setGwLabel(tmpLabel);
+		tmpUnit->setGwLabelBtn(tmpLabelBtn);
+		tmpUnit->setImgPath(mImageList[i]);
+		tmpUnit->setImgIndex(count + i);
+
+		this->mLabelList.push_back(tmpLabel);
+		this->mImageUnitList->push_back(tmpUnit);
+		this->mHBoxMainLayout->addWidget(tmpLabelBtn);
+
+		connect(tmpLabelBtn, SIGNAL(clicked(bool)), this, SIGNAL(childLabelClicked(bool)));
+
+		//connect(tmpLabelBtn, SIGNAL(clicked(bool)), this, SIGNAL(childLabelClicked(bool)));
 	}
+	mImageList.clear();
 }
 
 GwLabelBtn* GwLabelPanel::getInsertImageGwLabelBtn(QImage image)
 {
 	GwLabelBtn *tmpLabel = new GwLabelBtn(this);
+	tmpLabel->setFixedSize(childLabelWidth, childLabelHeight);
+	tmpLabel->setPixmap(QPixmap::fromImage(image)
+		.scaledToHeight(childImageWidth)
+		.scaledToWidth(childImageHeight)
+	);
+	return tmpLabel;
+}
+
+GwLabel* GwLabelPanel::getInsertImageGwLabel(QImage image)
+{
+	GwLabel *tmpLabel = new GwLabel(this);
 	tmpLabel->setFixedSize(childLabelWidth, childLabelHeight);
 	tmpLabel->setPixmap(QPixmap::fromImage(image)
 		.scaledToHeight(childImageWidth)
