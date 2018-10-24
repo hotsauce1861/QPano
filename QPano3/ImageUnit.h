@@ -40,7 +40,7 @@ private:
 	QLabel			*mLabel;
 	QString			mImgPath;
 	int				mImgIndex;
-
+	QImage			mImage;
 };
 
 #endif

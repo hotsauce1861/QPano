@@ -115,29 +115,24 @@ void GwLabelPanel::setInputImagesList(QStringList imgs)
 void GwLabelPanel::update()
 {	
 	int count = mImageUnitList->size();
-	//while (mImageList.size())
 	for(int i = 0;i<mImageList.size();i++)
 	{
 		ImageUnit *tmpUnit = new ImageUnit;
 		GwLabel *tmpLabel = new GwLabel(this);
 		GwLabelBtn *tmpLabelBtn = new GwLabelBtn(this);
 		QImage tmpImg(mImageList[i]);
-		//tmpLabel = getInsertImageLabel(tmpImg);
+		
 		tmpLabelBtn = getInsertImageGwLabelBtn(tmpImg);
 		tmpLabel = getInsertImageGwLabel(tmpImg);
-
+		//添加ImageUnit到列表中
 		tmpUnit->setGwLabel(tmpLabel);
 		tmpUnit->setGwLabelBtn(tmpLabelBtn);
 		tmpUnit->setImgPath(mImageList[i]);
 		tmpUnit->setImgIndex(count + i);
-
-		this->mLabelList.push_back(tmpLabel);
 		this->mImageUnitList->push_back(tmpUnit);
 		this->mHBoxMainLayout->addWidget(tmpLabelBtn);
 
-		connect(tmpLabelBtn, SIGNAL(clicked(bool)), this, SIGNAL(childLabelClicked(bool)));
-
-		//connect(tmpLabelBtn, SIGNAL(clicked(bool)), this, SIGNAL(childLabelClicked(bool)));
+		connect(tmpLabelBtn, SIGNAL(clicked(bool)), this, SIGNAL(childLabelClicked(bool)));		
 	}
 	mImageList.clear();
 }

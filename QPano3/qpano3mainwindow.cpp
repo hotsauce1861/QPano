@@ -3,6 +3,7 @@
 #include <QFileDialog>
 #include <QMessageBox>
 #include <QPixmap>
+#include <QIcon>
 #include "GwLabel.h"
 
 QPano3MainWindow::QPano3MainWindow(QWidget *parent) :
@@ -33,7 +34,7 @@ void QPano3MainWindow::changeToTabPageSourceImage()
 
 void QPano3MainWindow::resizeEvent(QResizeEvent * event)
 {
-
+	QMainWindow::resizeEvent(event);
 }
 
 
@@ -47,11 +48,34 @@ void QPano3MainWindow::setInputFile() {
 	ui->labelImagePanel->setInputImagesList(filename);
 	ui->labelImagePanel->update();
 	std::vector<ImageUnit*>	tmpList = ui->labelImagePanel->getImageListObj();
-	for (int i = 0; i < tmpList.size(); i++) {
+
+	for (int i = 0; i < tmpList.size(); i++) {		
+		
 		ui->tabWidgetEditImage->addTab(&(tmpList[i]->getGwLabel()),
 										QString::number(tmpList[i]->getImgIndex(), 10));
+
 	}
 
+
+	ui->tableWidgetSrcImage->setColumnCount(4);
+	ui->tableWidgetSrcImage->setRowCount(tmpList.size());
+	for (int i = 0; i < tmpList.size(); i++) {
+
+		QTableWidgetItem *itemLableImg = new QTableWidgetItem();
+		QTableWidgetItem *itemWidth = new QTableWidgetItem();
+		QTableWidgetItem *itemHeight = new QTableWidgetItem();
+		QTableWidgetItem *itemPath = new QTableWidgetItem();
+
+		itemLableImg->setIcon(QIcon(tmpList[i]->getImgPath()));
+		itemWidth->setText(QString::number(tmpList[i]->getLabel().width(), 10));
+		itemHeight->setText(QString::number(tmpList[i]->getLabel().height(), 10));
+		itemPath->setText(tmpList[i]->getImgPath());
+
+		ui->tableWidgetSrcImage->setItem(i, 0, itemLableImg);
+		ui->tableWidgetSrcImage->setItem(i, 1, itemWidth);
+		ui->tableWidgetSrcImage->setItem(i, 2, itemHeight);
+		ui->tableWidgetSrcImage->setItem(i, 3, itemPath);
+	}
 // 	for (int i = 0; i<filename.size();i++){
 // 		QWidget *tmpWidget = new QWidget(this);
 // 		QPushButton *tmpBtn = new QPushButton(this);
